@@ -5,7 +5,7 @@ import App from '../App';
 test('App component matches snapshot', () => {
   expect(render(
     <MemoryRouter>
-      <App />
-    </MemoryRouter>
+      <App/>
+    </MemoryRouter>,
   )).toMatchSnapshot();
 });
