@@ -11,10 +11,10 @@ Object {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -22,6 +22,7 @@ Object {
 
 .emotion-1 {
   background-color: #E53935;
+  width: 100%;
 }
 
 .emotion-1 * {
@@ -204,7 +205,6 @@ Object {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: #4f46e5;
   background-color: transparent;
   border: 1px solid transparent;
   display: -webkit-inline-box;
@@ -252,6 +252,9 @@ Object {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  max-height: 100%;
+  overflow-y: auto;
+  width: 100%;
 }
 
 .emotion-17 {
@@ -281,6 +284,7 @@ Object {
 
 .emotion-18 {
   background-color: #E53935;
+  width: 100%;
 }
 
 .emotion-18 * {
@@ -318,7 +322,6 @@ Object {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: #4f46e5;
   background-color: transparent;
   border: 1px solid transparent;
   display: -webkit-inline-box;
@@ -379,6 +382,7 @@ Object {
     <div>
       <div
         class="emotion-0"
+        wrap="nowrap"
       >
         <nav
           class="emotion-1"
@@ -392,12 +396,12 @@ Object {
               <picture>
                 <source
                   data-testid="image-webp"
-                  srcset="/assets/img/webp/pokemon-logo-64.webp"
+                  srcset="/assets/img/webp/pokemon-logo-128.webp"
                   type="image/webp"
                 />
                 <source
                   data-testid="image-png"
-                  srcset="/assets/img/png/pokemon-logo-64.png"
+                  srcset="/assets/img/png/pokemon-logo-128.png"
                   type="image/png"
                 />
                 <img
@@ -406,7 +410,7 @@ Object {
                   data-testid="image-regular"
                   height="64"
                   loading="lazy"
-                  src="/assets/img/png/pokemon-logo-64.png"
+                  src="/assets/img/png/pokemon-logo-128.png"
                   width="174"
                 />
               </picture>
@@ -657,10 +661,10 @@ Object {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -668,6 +672,7 @@ Object {
 
 .emotion-1 {
   background-color: #E53935;
+  width: 100%;
 }
 
 .emotion-1 * {
@@ -850,7 +855,6 @@ Object {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: #4f46e5;
   background-color: transparent;
   border: 1px solid transparent;
   display: -webkit-inline-box;
@@ -898,6 +902,9 @@ Object {
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  max-height: 100%;
+  overflow-y: auto;
+  width: 100%;
 }
 
 .emotion-17 {
@@ -927,6 +934,7 @@ Object {
 
 .emotion-18 {
   background-color: #E53935;
+  width: 100%;
 }
 
 .emotion-18 * {
@@ -964,7 +972,6 @@ Object {
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  color: #4f46e5;
   background-color: transparent;
   border: 1px solid transparent;
   display: -webkit-inline-box;
@@ -1024,6 +1031,7 @@ Object {
 <div>
     <div
       class="emotion-0"
+      wrap="nowrap"
     >
       <nav
         class="emotion-1"
@@ -1037,12 +1045,12 @@ Object {
             <picture>
               <source
                 data-testid="image-webp"
-                srcset="/assets/img/webp/pokemon-logo-64.webp"
+                srcset="/assets/img/webp/pokemon-logo-128.webp"
                 type="image/webp"
               />
               <source
                 data-testid="image-png"
-                srcset="/assets/img/png/pokemon-logo-64.png"
+                srcset="/assets/img/png/pokemon-logo-128.png"
                 type="image/png"
               />
               <img
@@ -1051,7 +1059,7 @@ Object {
                 data-testid="image-regular"
                 height="64"
                 loading="lazy"
-                src="/assets/img/png/pokemon-logo-64.png"
+                src="/assets/img/png/pokemon-logo-128.png"
                 width="174"
               />
             </picture>

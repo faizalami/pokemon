@@ -8,6 +8,7 @@ import { pokeBallRed, pikachuYellow } from './variables';
 import Image from './Image';
 import { ReactComponent as QuestionCircle } from './icons/question-circle.svg';
 import mediaQueries from './media-queries';
+import PageHeader from './PageHeader';
 
 const navStyle = css`
   background-color: ${pokeBallRed};
@@ -29,8 +30,6 @@ const aboutButtonStyle = css`
   }
 `;
 
-const pageTitleBackground = css`background-color: white`;
-
 const appTitle = css`
   ${width.full}
   img {
@@ -43,10 +42,6 @@ const appTitle = css`
   ${mediaQueries.lg} {
     width: auto;
   }
-`;
-
-const pageTitle = css`
-  font-size: 2rem;
 `;
 
 const wrapper = css`
@@ -175,14 +170,7 @@ function Layout (props) {
       </nav>
 
       <div css={mainContent}>
-        {props.title ?
-          <header css={pageTitleBackground}>
-            <Flex container alignItems="center" css={padding.y6}>
-              <h1 css={[margin.y0, margin.r2, pageTitle]}>{props.title}</h1>
-            </Flex>
-          </header>
-          : null
-        }
+        {props.title ? <PageHeader>{props.title}</PageHeader> : null}
 
         <Flex as="main" container css={margin.b8}>
           {props.children || <Outlet/>}
