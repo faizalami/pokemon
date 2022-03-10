@@ -20,7 +20,6 @@ function buttonVariants (variant) {
       `;
     case 'link':
       return css`
-        color: ${indigo};
         background-color: transparent;
         border: 1px solid transparent;
       `;

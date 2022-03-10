@@ -3,8 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import ErrorPage from './pages/errors/ErrorPage';
 
 const Layout = React.lazy(() => import('./components/Layout'));
-const PokemonIndex = React.lazy(() => import('./pages/pokemon/Index'));
+const PokemonIndex = React.lazy(() => import('./pages/pokemon/PokemonIndex'));
 const PokemonDetail = React.lazy(() => import('./pages/pokemon/Detail'));
+const MyPokemon = React.lazy(() => import('./pages/pokemon/MyPokemonIndex'));
 const About = React.lazy(() => import('./pages/about/Index'));
 const Game = React.lazy(() => import('./pages/game/Index'));
 
@@ -18,10 +19,12 @@ function App () {
           <Route path="pokemon/:slug" element={<PokemonDetail/>}/>
         </Route>
         <Route path="/my-pokemon" element={<Layout title="My Pokemon"/>}>
-          <Route index element={<PokemonIndex/>}/>
+          <Route index element={<MyPokemon/>}/>
         </Route>
-        <Route path="/play" element={<Game/>}/>
-        <Route path="/about" element={<Layout/>}>
+        <Route path="/play" element={<Layout/>}>
+          <Route index element={<Game/>}/>
+        </Route>
+        <Route path="/about" element={<Layout title="About"/>}>
           <Route index element={<About/>}/>
         </Route>
         <Route path="/404" element={<Layout/>}>

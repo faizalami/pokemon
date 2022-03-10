@@ -12,6 +12,7 @@ import mediaQueries from './media-queries';
 const navStyle = css`
   background-color: ${pokeBallRed};
 
+  ${width.full}
   & * {
     color: ${pikachuYellow} !important;
   }
@@ -48,13 +49,18 @@ const pageTitle = css`
   font-size: 2rem;
 `;
 
-const minHeightFull = css`
+const wrapper = css`
   position: fixed;
   width: 100%;
   height: 100%;
 `;
 
-const flexGrow = css`flex-grow: 1`;
+const mainContent = css`
+  flex-grow: 1;
+  max-height: 100%;
+  overflow-y: auto;
+  ${width.full}
+`;
 
 const lgHide = css`
   ${mediaQueries.lg} {
@@ -120,13 +126,13 @@ function NavButton ({ png, webp, title, to, bottom }) {
 
 function Layout (props) {
   return (
-    <Flex column css={minHeightFull}>
+    <Flex column wrap="nowrap" css={wrapper}>
       <nav css={navStyle}>
         <Flex container alignItems="center" css={padding.y2}>
           <Flex justifyContent="center" css={appTitle}>
             <Image
-              png="/assets/img/png/pokemon-logo-64.png"
-              webp="/assets/img/webp/pokemon-logo-64.webp"
+              png="/assets/img/png/pokemon-logo-128.png"
+              webp="/assets/img/webp/pokemon-logo-128.webp"
               alt="Pokemon"
               lazy
               width={174}
@@ -162,13 +168,13 @@ function Layout (props) {
             </li>
           </Flex>
 
-          <CircleButtonLink variant="link" to="/about" css={aboutButtonStyle}>
+          <CircleButtonLink variant="link" to="/about" aria-label="About" css={aboutButtonStyle}>
             <QuestionCircle/>
           </CircleButtonLink>
         </Flex>
       </nav>
 
-      <div css={flexGrow}>
+      <div css={mainContent}>
         {props.title ?
           <header css={pageTitleBackground}>
             <Flex container alignItems="center" css={padding.y6}>

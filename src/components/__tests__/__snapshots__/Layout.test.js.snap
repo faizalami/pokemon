@@ -521,6 +521,7 @@ Object {
               </li>
             </ul>
             <a
+              aria-label="About"
               class="emotion-15"
               href="/about"
             >
@@ -1165,6 +1166,7 @@ Object {
             </li>
           </ul>
           <a
+            aria-label="About"
             class="emotion-15"
             href="/about"
           >
