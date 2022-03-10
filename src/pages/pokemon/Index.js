@@ -7,7 +7,7 @@ function Index ({ data }) {
   return (
     <Grid cols={2} gap={4} md={{ cols: 4 }} css={width.full}>
       {
-        data.map(item => <PokemonCard key={item.id} {...item} />)
+        data.map(item => <PokemonCard key={item.id + Math.random()} {...item} />)
       }
     </Grid>
   );

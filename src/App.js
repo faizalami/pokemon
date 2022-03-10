@@ -16,7 +16,9 @@ function App () {
         <Route path="/" element={<Layout title="Pokedex"/>}>
           <Route index element={<PokemonIndex/>}/>
           <Route path="pokemon" element={<PokemonIndex/>}/>
-          <Route path="pokemon/:slug" element={<PokemonDetail/>}/>
+        </Route>
+        <Route path="pokemon/:slug" element={<Layout/>}>
+          <Route index element={<PokemonDetail/>}/>
         </Route>
         <Route path="/my-pokemon" element={<Layout title="My Pokemon"/>}>
           <Route index element={<MyPokemon/>}/>

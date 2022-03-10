@@ -1,4 +1,5 @@
 import Index from './Index';
+import { Helmet } from 'react-helmet-async';
 
 const dummyData = [
   {
@@ -85,7 +86,12 @@ const dummyData = [
 
 function PokemonIndex () {
   return (
-    <Index data={dummyData}/>
+    <>
+      <Helmet>
+        <title>Pokedex | Pokemon</title>
+      </Helmet>
+      <Index data={dummyData}/>
+    </>
   );
 }
 
