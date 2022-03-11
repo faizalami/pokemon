@@ -58,8 +58,11 @@ export const Flex = applyFlexTo('div');
 
 function generateGridProps (props) {
   return css`
-    ${props.cols ? `grid-template-columns: repeat(${props.cols}, minmax(0, 1fr));` : null}
-    ${props.rows ? `grid-template-rows: repeat(${props.rows}, minmax(0, 1fr));` : null}
+    ${Number(props.cols) ? `grid-template-columns: repeat(${props.cols}, minmax(0, 1fr));` : null}
+    ${props.cols === 'auto' ? `grid-template-columns: repeat(auto-fit, minmax(0, 1fr));` : null}
+    ${Number(props.rows) ? `grid-template-rows: repeat(${props.rows}, minmax(0, 1fr));` : null}
+    ${props.rows === 'auto' ? `grid-template-rows: repeat(auto-fit, minmax(0, 1fr));` : null}
+    ${props.flow ? `grid-auto-flow: ${props.flow};` : null}
     ${props.gap && props.gap <= 8 ? `gap: ${props.gap * UNIT_MULTIPLIER}rem;` : null}
     ${props.container ? container : null}
   `;

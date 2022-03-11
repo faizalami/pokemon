@@ -4,6 +4,18 @@ exports[`PageHeader matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": .emotion-0 {
+  background-color: white;
+  width: 100%;
+}
+
+.emotion-0 h1 {
+  font-size: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-right: 0.5rem;
+}
+
+.emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -15,6 +27,10 @@ Object {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -22,10 +38,12 @@ Object {
   max-width: 80rem;
   margin-left: 1rem;
   margin-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 1280px) {
-  .emotion-0 {
+  .emotion-1 {
     margin-left: auto;
     margin-right: auto;
   }
@@ -34,14 +52,12 @@ Object {
 <body>
     <div>
       <header
-        css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+        class="emotion-0"
       >
         <div
-          class="emotion-0"
+          class="emotion-1"
         >
-          <h1
-            css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop).,You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop).,You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
-          >
+          <h1>
             test
           </h1>
         </div>
@@ -49,6 +65,18 @@ Object {
     </div>
   </body>,
   "container": .emotion-0 {
+  background-color: white;
+  width: 100%;
+}
+
+.emotion-0 h1 {
+  font-size: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-right: 0.5rem;
+}
+
+.emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -60,6 +88,10 @@ Object {
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -67,10 +99,12 @@ Object {
   max-width: 80rem;
   margin-left: 1rem;
   margin-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 @media screen and (min-width: 1280px) {
-  .emotion-0 {
+  .emotion-1 {
     margin-left: auto;
     margin-right: auto;
   }
@@ -78,14 +112,12 @@ Object {
 
 <div>
     <header
-      css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
+      class="emotion-0"
     >
       <div
-        class="emotion-0"
+        class="emotion-1"
       >
-        <h1
-          css="You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop).,You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop).,You have tried to stringify object returned from \`css\` function. It isn't supposed to be used directly (e.g. as value of the \`className\` prop), but rather handed to emotion so it can handle it (e.g. as value of \`css\` prop)."
-        >
+        <h1>
           test
         </h1>
       </div>
