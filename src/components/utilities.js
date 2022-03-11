@@ -71,4 +71,9 @@ const pageWrapper = css`
   ${width.full}
 `;
 
-export { margin, padding, width, rounded, textIcon, pageWrapper };
+const textAlign = {};
+['left', 'right', 'justify', 'center'].forEach(align => {
+  textAlign[align] = css`text-align: ${align}`;
+});
+
+export { margin, padding, width, rounded, textIcon, pageWrapper, textAlign };

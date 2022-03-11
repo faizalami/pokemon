@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getAllPokemons } from './pokemons.actions';
+import { getAllPokemons, getPokemonDetail } from './pokemons.actions';
 
 export const initialState = {
   current_offset: 0,
@@ -8,14 +8,16 @@ export const initialState = {
   detail: null,
 };
 
+const setLoading = state => ({
+  ...state,
+  loading: true,
+});
+
 const pokemonsSlice = createSlice({
   name: 'pasien',
   initialState,
   extraReducers: {
-    [getAllPokemons.pending]: state => ({
-      ...state,
-      loading: true,
-    }),
+    [getAllPokemons.pending]: setLoading,
     [getAllPokemons.fulfilled]: (state, action) => {
       const { current_offset, data, error } = action.payload;
 
@@ -23,6 +25,17 @@ const pokemonsSlice = createSlice({
         ...state,
         current_offset,
         data: [...state.data, ...data],
+        error,
+        loading: false,
+      };
+    },
+    [getPokemonDetail.pending]: setLoading,
+    [getPokemonDetail.fulfilled]: (state, action) => {
+      const { detail, error } = action.payload;
+
+      return {
+        ...state,
+        detail: { ...detail },
         error,
         loading: false,
       };

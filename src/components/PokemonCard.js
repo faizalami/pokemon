@@ -57,7 +57,7 @@ function PokemonCard ({ id, name, nickname, species }) {
     <ButtonLink to={`/pokemon/${name}`} variant="link" css={[padding.a0, displayInline]}>
       <CardWrapper column>
         <div css={cardThumbnailStyle(species?.color?.name)}>
-          <div className="thumbnail-background"></div>
+          <div className="thumbnail-background"/>
           <Image
             src={`${process.env.REACT_APP_DREAM_WORLD_URL}${id}.svg`}
             alt={name}

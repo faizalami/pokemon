@@ -2,7 +2,7 @@ import { gql } from '@apollo/client';
 
 export const GET_ALL_POKEMONS = gql`
   query getAllPokemons ($limit: Int, $offset: Int) {
-    pokemon: pokemon_v2_pokemon (limit: $limit, offset: $offset) {
+    pokemons: pokemon_v2_pokemon (limit: $limit, offset: $offset, distinct_on: id, order_by: {id: asc}) {
       id
       name
       species: pokemon_v2_pokemonspecy {
@@ -15,7 +15,7 @@ export const GET_ALL_POKEMONS = gql`
 `;
 
 export const GET_POKEMON_DETAIL = gql`
-  query getAllPokemons ($name: String) {
+  query getPokemonDetail ($name: String) {
     pokemon: pokemon_v2_pokemon(limit: 1, offset: 0, where: {name: {_eq: $name}}) {
       id
       name
@@ -47,7 +47,7 @@ export const GET_POKEMON_DETAIL = gql`
           name
         }
       }
-      moves: pokemon_v2_pokemonmoves(distinct_on: move_id, limit: 10, offset: 0) {
+      moves: pokemon_v2_pokemonmoves(distinct_on: move_id) {
         move: pokemon_v2_move {
           name
           class: pokemon_v2_movedamageclass {

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import PageHeader from '../../components/PageHeader';
 import Image from '../../components/Image';
 import { css } from '@emotion/react';
-import { margin, padding, rounded, width } from '../../components/utilities';
+import { margin, padding, rounded, textAlign, width } from '../../components/utilities';
 import { gray } from '../../components/variables';
 import { Flex, Grid } from '../../components/FlexGrid';
 import styled from '@emotion/styled';
@@ -17,8 +17,13 @@ import {
   Legend,
 } from 'chart.js';
 import { Radar } from 'react-chartjs-2';
-import { useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 import mediaQueries from '../../components/media-queries';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { getPokemonDetail } from '../../redux/pokemons/pokemons.actions';
+import { selectPokemonDetail, selectPokemonsLoading } from '../../redux/pokemons/pokemons.selectors';
+import Loading from '../../components/Loading';
 
 ChartJS.register(
   RadialLinearScale,
@@ -29,168 +34,21 @@ ChartJS.register(
   Legend,
 );
 
-const dummy = {
-  'id': 1,
-  'name': 'bulbasaur',
-  'height': 7,
-  'weight': 69,
-  'species': {
-    'name': 'bulbasaur',
-    'color': {
-      'name': 'green',
-    },
-    'generation': {
-      'name': 'generation-i',
-    },
-    'shape': {
-      'name': 'quadruped',
-    },
-    'habitat': {
-      'name': 'grassland',
-    },
-  },
-  'stats': [
-    {
-      'base_stat': 45,
-      'stat': {
-        'name': 'hp',
-      },
-    },
-    {
-      'base_stat': 49,
-      'stat': {
-        'name': 'attack',
-      },
-    },
-    {
-      'base_stat': 49,
-      'stat': {
-        'name': 'defense',
-      },
-    },
-    {
-      'base_stat': 65,
-      'stat': {
-        'name': 'special-attack',
-      },
-    },
-    {
-      'base_stat': 65,
-      'stat': {
-        'name': 'special-defense',
-      },
-    },
-    {
-      'base_stat': 45,
-      'stat': {
-        'name': 'speed',
-      },
-    },
-  ],
-  'types': [
-    {
-      'type': {
-        'name': 'grass',
-      },
-    },
-    {
-      'type': {
-        'name': 'poison',
-      },
-    },
-  ],
-  'moves': [
-    {
-      'move': {
-        'name': 'razor-wind',
-        'class': {
-          'name': 'special',
-        },
-      },
-      'move_id': 13,
-    },
-    {
-      'move': {
-        'name': 'swords-dance',
-        'class': {
-          'name': 'status',
-        },
-      },
-      'move_id': 14,
-    },
-    {
-      'move': {
-        'name': 'cut',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 15,
-    },
-    {
-      'move': {
-        'name': 'bind',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 20,
-    },
-    {
-      'move': {
-        'name': 'vine-whip',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 22,
-    },
-    {
-      'move': {
-        'name': 'headbutt',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 29,
-    },
-    {
-      'move': {
-        'name': 'tackle',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 33,
-    },
-    {
-      'move': {
-        'name': 'body-slam',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 34,
-    },
-    {
-      'move': {
-        'name': 'take-down',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 36,
-    },
-    {
-      'move': {
-        'name': 'double-edge',
-        'class': {
-          'name': 'physical',
-        },
-      },
-      'move_id': 38,
-    },
-  ],
+const shapeConvert = {
+  heads: 'head',
+  legs: 'head-legs',
+  fish: 'fins',
+  armor: 'insectoid',
+  quadruped: 'quadruped',
+  'bug-wings': 'wings-multiple',
+  ball: 'multiple',
+  tentacles: 'tentacles',
+  blob: 'head-base',
+  upright: 'bipedal-tailed',
+  humanoid: 'bipedal-tailless',
+  wings: 'wings-single',
+  squiggle: 'serpentine',
+  arms: 'head-arms',
 };
 
 function DetailSectionTemplate ({ className, title, children }) {
@@ -219,14 +77,28 @@ const DetailSection = styled(DetailSectionTemplate)`
 `;
 
 const pokemonImageStyle = (color) => css`
+  position: relative;
+  width: 300px;
+  height: 300px;
+
   ${margin.aAuto}
-  img {
+  .thumbnail-background {
+    position: absolute;
+    background-color: ${color || gray};
     width: 300px;
     height: 300px;
-    background-color: ${color || gray};
-    border: 0.5rem solid ${color || gray};
-    object-fit: contain;
+    border: 0.5rem solid transparent;
+    opacity: 0.7;
     ${rounded}
+  }
+
+  img {
+    position: absolute;
+    object-position: center;
+    object-fit: contain;
+    width: 300px;
+    height: 300px;
+    border: 0.5rem solid transparent;
   }
 `;
 
@@ -245,145 +117,169 @@ const radarWrapper = css`
   }
 `;
 
-const radarOptions = {
-  pointRadius: 10,
-  pointBackgroundColor: dummy.species?.color?.name || gray,
-  plugins: {
-    legend: { display: false },
-  },
-  scales: {
-    r: {
-      pointLabels: {
-        display: false,
-      },
-      max: 100,
-      min: 0,
-      ticks: {
-        stepSize: 20,
-      },
-    },
-  },
-};
-
 function PokemonDetail () {
+  const dispatch = useDispatch();
+  const { name } = useParams();
+  const loading = useSelector(selectPokemonsLoading);
+
+  const dispatchGetDetail = useCallback(() => {
+    dispatch(getPokemonDetail(name));
+  }, [dispatch, name]);
+
+  useEffect(() => {
+    dispatchGetDetail();
+  }, [dispatchGetDetail]);
+
+  const detail = useSelector(selectPokemonDetail);
+
   const radarDataSet = useMemo(() => {
     return {
-      labels: dummy.stats.map(stat => stat.stat.name.replace('-', ' ')),
+      labels: detail?.stats.map(stat => stat.stat.name.replace('-', ' ')) || [],
       datasets: [
         {
-          data: dummy.stats.map(stat => stat.base_stat),
+          data: detail?.stats.map(stat => stat.base_stat) || [],
           borderWidth: 1,
-          borderColor: dummy.species?.color?.name || gray,
+          borderColor: detail?.species?.color?.name || gray,
         },
       ],
     };
-  }, []);
+  }, [detail]);
 
-  return (
-    <>
-      <Helmet>
-        <title>{dummy.name} | Pokemon</title>
-      </Helmet>
+  const radarOptions = useMemo(() => {
+    return {
+      pointRadius: 10,
+      pointBackgroundColor: detail?.species?.color?.name || gray,
+      plugins: {
+        legend: { display: false },
+      },
+      scales: {
+        r: {
+          pointLabels: {
+            display: false,
+          },
+          min: 0,
+          ticks: {
+            stepSize: 20,
+          },
+        },
+      },
+    };
+  }, [detail]);
 
-      <PageHeader>{dummy.name}</PageHeader>
+  if (!loading && detail) {
+    return (
+      <>
+        <Helmet>
+          <title>{detail.name} | Pokemon</title>
+        </Helmet>
 
-      <Flex column css={width.full}>
-        <Flex as="section" css={width.full}>
-          <div css={pokemonImageStyle(dummy.species?.color?.name)}>
-            <Image
-              src={`${process.env.REACT_APP_DREAM_WORLD_URL}${dummy.id}.svg`}
-              alt={dummy.name}
-              lazy
-              width={300}
-              height={300}
-            />
-          </div>
+        <PageHeader>{detail.name}</PageHeader>
 
-          <Grid as="ul" container cols="auto" gap={4} css={[width.full, padding.x8]}>
-            {dummy.species?.shape?.name ? (
-              <Flex as="li" column alignItems="center">
-                <Image
-                  src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}body-style/${dummy.species?.shape?.name}-gen8.png`}
-                  alt={dummy.species?.shape?.name}
-                  lazy
-                  width={32}
-                  height={32}
-                />
-                <p css={margin.a0}>{dummy.species?.shape?.name}</p>
-              </Flex>
-            ) : null}
-            {dummy.types.map(type => (
-              <Flex as="li" key={type.type.name} column alignItems="center">
-                <Image
-                  src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}types/gen8/${type.type.name}.png`}
-                  alt={type.type.name}
-                  lazy
-                  width={32}
-                  height={32}
-                />
-                <p css={margin.a0}>{type.type.name}</p>
-              </Flex>
-            ))}
-          </Grid>
-        </Flex>
+        <Flex column css={width.full}>
+          <Flex as="section" css={width.full}>
+            <div css={pokemonImageStyle(detail.species?.color?.name)}>
+              <div className="thumbnail-background"/>
+              <Image
+                src={`${process.env.REACT_APP_DREAM_WORLD_URL}${detail.id}.svg`}
+                alt={detail.name}
+                lazy
+                width={300}
+                height={300}
+              />
+            </div>
 
-        <DetailSection title="Informations">
-          <Grid as="ul" cols={2} gap={4} lg={{ cols: 'auto' }} css={[width.full, padding.x4]}>
-            <li>Height:<br/><strong>{dummy.height / 10} Meters</strong></li>
-            <li>Weight:<br/><strong>{dummy.weight / 10} KG</strong></li>
-            <li>Species:<br/><strong>{dummy.species?.name || '-'}</strong></li>
-            <li>Habitat:<br/><strong>{dummy.species?.habitat?.name || '-'}</strong></li>
-          </Grid>
-        </DetailSection>
-
-        <DetailSection title="Base Stats">
-          <div css={radarWrapper}>
-            <Radar options={radarOptions} data={radarDataSet}/>
-          </div>
-        </DetailSection>
-
-        <DetailSection title="Moves">
-          <Grid as="ul" cols={2} flow="row" lg={{ cols: 4 }} gap={4} css={[width.full, padding.x4]}>
-            {dummy.moves.map(move => (
-              <Flex as="li" key={move.move.name}>
-                {move.move.class?.name ? (
+            <Grid as="ul" container cols="auto" gap={4} css={[width.full, padding.x8]}>
+              {detail.species?.shape?.name ? (
+                <Flex as="li" column alignItems="center">
                   <Image
-                    src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}seals/home/move-${move.move.class?.name}.png`}
-                    alt={move.move.class?.name}
+                    src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}body-style/${shapeConvert[detail.species?.shape?.name]}-gen8.png`}
+                    alt={detail.species?.shape?.name}
                     lazy
-                    width={16}
-                    height={16}
-                    imageCss={movesImageStyle}
+                    width={32}
+                    height={32}
                   />
-                ) : null}
-                {move.move.name}
-              </Flex>
-            ))}
-          </Grid>
-        </DetailSection>
-
-        {dummy.moves.some(move => !!move.move.class) ? (
-          <DetailSection title="Move Types">
-            <Grid as="ul" cols={3} gap={4} css={[width.full, padding.x4]}>
-              {['physical', 'special', 'status'].map(move => (
-                <Flex as="li" key={move}>
+                  <p
+                    css={[
+                      margin.a0,
+                      textAlign.center,
+                    ]}
+                  >{shapeConvert[detail.species?.shape?.name]?.replace('-', ' ')}</p>
+                </Flex>
+              ) : null}
+              {detail.types.map(type => (
+                <Flex as="li" key={type.type.name} column alignItems="center">
                   <Image
-                    src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}seals/home/move-${move}.png`}
-                    alt={move}
+                    src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}types/gen8/${type.type.name}.png`}
+                    alt={type.type.name}
                     lazy
-                    width={16}
-                    height={16}
-                    imageCss={movesImageStyle}
+                    width={32}
+                    height={32}
                   />
-                  {move}
+                  <p css={margin.a0}>{type.type.name}</p>
+                </Flex>
+              ))}
+            </Grid>
+          </Flex>
+
+          <DetailSection title="Informations">
+            <Grid as="ul" cols={2} gap={4} lg={{ cols: 'auto' }} css={[width.full, padding.x4]}>
+              <li>Height:<br/><strong>{detail.height / 10} Meters</strong></li>
+              <li>Weight:<br/><strong>{detail.weight / 10} KG</strong></li>
+              <li>Species:<br/><strong>{detail.species?.name || '-'}</strong></li>
+              <li>Habitat:<br/><strong>{detail.species?.habitat?.name || '-'}</strong></li>
+            </Grid>
+          </DetailSection>
+
+          <DetailSection title="Base Stats">
+            <div css={radarWrapper}>
+              <Radar options={radarOptions} data={radarDataSet}/>
+            </div>
+          </DetailSection>
+
+          <DetailSection title="Moves">
+            <Grid as="ul" cols={2} flow="row" lg={{ cols: 4 }} gap={4} css={[width.full, padding.x4]}>
+              {detail.moves.map(move => (
+                <Flex as="li" key={move.move.name}>
+                  {move.move.class?.name ? (
+                    <Image
+                      src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}seals/home/move-${move.move.class?.name}.png`}
+                      alt={move.move.class?.name}
+                      lazy
+                      width={16}
+                      height={16}
+                      imageCss={movesImageStyle}
+                    />
+                  ) : null}
+                  {move.move.name}
                 </Flex>
               ))}
             </Grid>
           </DetailSection>
-        ) : null}
-      </Flex>
-    </>
-  );
+
+          {detail.moves.some(move => !!move.move.class) ? (
+            <DetailSection title="Move Types">
+              <Grid as="ul" cols={3} gap={4} css={[width.full, padding.x4]}>
+                {['physical', 'special', 'status'].map(move => (
+                  <Flex as="li" key={move}>
+                    <Image
+                      src={`${process.env.REACT_APP_SYMBOLS_IMAGE_URL}seals/home/move-${move}.png`}
+                      alt={move}
+                      lazy
+                      width={16}
+                      height={16}
+                      imageCss={movesImageStyle}
+                    />
+                    {move}
+                  </Flex>
+                ))}
+              </Grid>
+            </DetailSection>
+          ) : null}
+        </Flex>
+      </>
+    );
+  }
+  return <Loading/>;
 }
 
 export default PokemonDetail;
