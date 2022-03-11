@@ -246,7 +246,7 @@ const radarWrapper = css`
 `;
 
 const radarOptions = {
-  pointRadius: 5,
+  pointRadius: 10,
   pointBackgroundColor: dummy.species?.color?.name || gray,
   plugins: {
     legend: { display: false },
