@@ -7,6 +7,27 @@ import { margin, padding, rounded, width } from '../../components/utilities';
 import { gray } from '../../components/variables';
 import { Flex, Grid } from '../../components/FlexGrid';
 import styled from '@emotion/styled';
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Radar } from 'react-chartjs-2';
+import { useMemo } from 'react';
+import mediaQueries from '../../components/media-queries';
+
+ChartJS.register(
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Tooltip,
+  Legend,
+);
 
 const dummy = {
   'id': 1,
@@ -215,7 +236,49 @@ const movesImageStyle = css`
   object-fit: contain;
 `;
 
+const radarWrapper = css`
+  width: 100%;
+
+  ${margin.aAuto}
+  ${mediaQueries.lg} {
+    width: 300px;
+  }
+`;
+
+const radarOptions = {
+  pointRadius: 5,
+  pointBackgroundColor: dummy.species?.color?.name || gray,
+  plugins: {
+    legend: { display: false },
+  },
+  scales: {
+    r: {
+      pointLabels: {
+        display: false,
+      },
+      max: 100,
+      min: 0,
+      ticks: {
+        stepSize: 20,
+      },
+    },
+  },
+};
+
 function PokemonDetail () {
+  const radarDataSet = useMemo(() => {
+    return {
+      labels: dummy.stats.map(stat => stat.stat.name.replace('-', ' ')),
+      datasets: [
+        {
+          data: dummy.stats.map(stat => stat.base_stat),
+          borderWidth: 1,
+          borderColor: dummy.species?.color?.name || gray,
+        },
+      ],
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -271,6 +334,12 @@ function PokemonDetail () {
             <li>Species:<br/><strong>{dummy.species?.name || '-'}</strong></li>
             <li>Habitat:<br/><strong>{dummy.species?.habitat?.name || '-'}</strong></li>
           </Grid>
+        </DetailSection>
+
+        <DetailSection title="Base Stats">
+          <div css={radarWrapper}>
+            <Radar options={radarOptions} data={radarDataSet}/>
+          </div>
         </DetailSection>
 
         <DetailSection title="Moves">
