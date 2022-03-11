@@ -5,6 +5,11 @@ const dummyData = [
   {
     'id': 1,
     'name': 'bulbasaur',
+    'species': {
+      'color': {
+        'name': 'green',
+      },
+    },
   },
   {
     'id': 2,

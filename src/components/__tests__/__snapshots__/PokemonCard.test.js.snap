@@ -55,10 +55,12 @@ Object {
 }
 
 .emotion-2 {
+  background-color: #d1d5db;
   object-position: center;
   object-fit: contain;
   height: 150px;
   border: 0.5rem solid transparent;
+  border-radius: 0.5rem;
   width: 100%;
 }
 
@@ -150,10 +152,12 @@ Object {
 }
 
 .emotion-2 {
+  background-color: #d1d5db;
   object-position: center;
   object-fit: contain;
   height: 150px;
   border: 0.5rem solid transparent;
+  border-radius: 0.5rem;
   width: 100%;
 }
 
