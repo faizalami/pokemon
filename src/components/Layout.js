@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { Suspense } from 'react';
 import { css } from '@emotion/react';
 import { Outlet } from 'react-router-dom';
 import { Flex, Grid } from './FlexGrid';
@@ -9,6 +10,7 @@ import Image from './Image';
 import { ReactComponent as QuestionCircle } from './icons/question-circle.svg';
 import mediaQueries from './media-queries';
 import PageHeader from './PageHeader';
+import Loading from './Loading';
 
 const navStyle = css`
   background-color: ${pokeBallRed};
@@ -173,7 +175,11 @@ function Layout (props) {
         {props.title ? <PageHeader>{props.title}</PageHeader> : null}
 
         <Flex as="main" container css={margin.b8}>
-          {props.children || <Outlet/>}
+          {props.children || (
+            <Suspense fallback={<Loading/>}>
+              <Outlet/>
+            </Suspense>
+          )}
         </Flex>
       </div>
 

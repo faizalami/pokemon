@@ -3,13 +3,1551 @@
 exports[`App component matches snapshot 1`] = `
 Object {
   "asFragment": [Function],
-  "baseElement": <body>
+  "baseElement": @keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-1 {
+  background-color: #E53935;
+  width: 100%;
+}
+
+.emotion-1 * {
+  color: #fff269!important;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.emotion-3 img {
+  width: 100%;
+  height: 3rem;
+  object-position: center;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-3 {
+    width: auto;
+  }
+}
+
+.emotion-4 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-6 {
+  border-radius: 0.375rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 img {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.emotion-7 p {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1rem;
+  margin: 0rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-15 {
+  border-radius: 0.375rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0rem;
+  position: absolute;
+  right: 0;
+  margin-right: 0.25rem;
+}
+
+.emotion-15 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-15 {
+    position: relative;
+    margin-right: 0rem;
+  }
+}
+
+.emotion-16 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-height: 100%;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.emotion-17 {
+  background-color: white;
+  width: 100%;
+}
+
+.emotion-17 h1 {
+  font-size: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-right: 0.5rem;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-18 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-19 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.emotion-21 {
+  -webkit-animation: animation-0 3s infinite linear;
+  animation: animation-0 3s infinite linear;
+}
+
+.emotion-22 {
+  background-color: #E53935;
+  width: 100%;
+}
+
+.emotion-22 * {
+  color: #fff269!important;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-22 {
+    display: none;
+  }
+}
+
+.emotion-23 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-23 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-24 {
+  border-radius: 0.375rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-25 img {
+  width: 2rem;
+  height: 2rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-25 p {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 0rem;
+}
+
+<body>
     <div>
-      Loading...
+      <div
+        class="emotion-0"
+        wrap="nowrap"
+      >
+        <nav
+          class="emotion-1"
+        >
+          <div
+            class="emotion-2"
+          >
+            <div
+              class="emotion-3"
+            >
+              <picture>
+                <source
+                  data-testid="image-webp"
+                  srcset="/assets/img/webp/pokemon-logo-128.webp"
+                  type="image/webp"
+                />
+                <source
+                  data-testid="image-png"
+                  srcset="/assets/img/png/pokemon-logo-128.png"
+                  type="image/png"
+                />
+                <img
+                  alt="Pokemon"
+                  class="emotion-4"
+                  data-testid="image-regular"
+                  height="64"
+                  loading="lazy"
+                  src="/assets/img/png/pokemon-logo-128.png"
+                  width="174"
+                />
+              </picture>
+            </div>
+            <ul
+              class="emotion-5"
+            >
+              <li>
+                <a
+                  class="emotion-6"
+                  href="/"
+                >
+                  <div
+                    class="emotion-7"
+                  >
+                    <picture>
+                      <source
+                        data-testid="image-webp"
+                        srcset="/assets/img/webp/pikachu-64.webp"
+                        type="image/webp"
+                      />
+                      <source
+                        data-testid="image-png"
+                        srcset="/assets/img/png/pikachu-64.png"
+                        type="image/png"
+                      />
+                      <img
+                        alt="Pokedex"
+                        class="emotion-8"
+                        data-testid="image-regular"
+                        height="64"
+                        loading="lazy"
+                        src="/assets/img/png/pikachu-64.png"
+                        width="64"
+                      />
+                    </picture>
+                    <p>
+                      Pokedex
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="emotion-6"
+                  href="/my-pokemon"
+                >
+                  <div
+                    class="emotion-7"
+                  >
+                    <picture>
+                      <source
+                        data-testid="image-webp"
+                        srcset="/assets/img/webp/pokemon-trainer-64.webp"
+                        type="image/webp"
+                      />
+                      <source
+                        data-testid="image-png"
+                        srcset="/assets/img/png/pokemon-trainer-64.png"
+                        type="image/png"
+                      />
+                      <img
+                        alt="My Pokemon"
+                        class="emotion-8"
+                        data-testid="image-regular"
+                        height="64"
+                        loading="lazy"
+                        src="/assets/img/png/pokemon-trainer-64.png"
+                        width="64"
+                      />
+                    </picture>
+                    <p>
+                      My Pokemon
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="emotion-6"
+                  href="/play"
+                >
+                  <div
+                    class="emotion-7"
+                  >
+                    <picture>
+                      <source
+                        data-testid="image-webp"
+                        srcset="/assets/img/webp/pokeball-64.webp"
+                        type="image/webp"
+                      />
+                      <source
+                        data-testid="image-png"
+                        srcset="/assets/img/png/pokeball-64.png"
+                        type="image/png"
+                      />
+                      <img
+                        alt="Play"
+                        class="emotion-8"
+                        data-testid="image-regular"
+                        height="64"
+                        loading="lazy"
+                        src="/assets/img/png/pokeball-64.png"
+                        width="64"
+                      />
+                    </picture>
+                    <p>
+                      Play
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <a
+              aria-label="About"
+              class="emotion-15"
+              href="/about"
+            >
+              <svg>
+                question-circle.svg
+              </svg>
+            </a>
+          </div>
+        </nav>
+        <div
+          class="emotion-16"
+        >
+          <header
+            class="emotion-17"
+          >
+            <div
+              class="emotion-18"
+            >
+              <h1>
+                Pokedex
+              </h1>
+            </div>
+          </header>
+          <main
+            class="emotion-19"
+          >
+            <div
+              class="emotion-20"
+            >
+              <picture>
+                <source
+                  data-testid="image-webp"
+                  srcset="/assets/img/webp/pokeball-64.webp"
+                  type="image/webp"
+                />
+                <source
+                  data-testid="image-png"
+                  srcset="/assets/img/png/pokeball-64.png"
+                  type="image/png"
+                />
+                <img
+                  alt="Loading"
+                  class="emotion-21"
+                  data-testid="image-regular"
+                  height="64"
+                  loading="lazy"
+                  src="/assets/img/png/pokeball-64.png"
+                  width="64"
+                />
+              </picture>
+            </div>
+          </main>
+        </div>
+        <nav
+          class="emotion-22"
+        >
+          <div
+            class="emotion-23"
+            cols="3"
+          >
+            <a
+              class="emotion-24"
+              href="/"
+            >
+              <div
+                class="emotion-25"
+              >
+                <picture>
+                  <source
+                    data-testid="image-webp"
+                    srcset="/assets/img/webp/pikachu-64.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    data-testid="image-png"
+                    srcset="/assets/img/png/pikachu-64.png"
+                    type="image/png"
+                  />
+                  <img
+                    alt="Pokedex"
+                    class="emotion-8"
+                    data-testid="image-regular"
+                    height="64"
+                    loading="lazy"
+                    src="/assets/img/png/pikachu-64.png"
+                    width="64"
+                  />
+                </picture>
+                <p>
+                  Pokedex
+                </p>
+              </div>
+            </a>
+            <a
+              class="emotion-24"
+              href="/play"
+            >
+              <div
+                class="emotion-25"
+              >
+                <picture>
+                  <source
+                    data-testid="image-webp"
+                    srcset="/assets/img/webp/pokeball-64.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    data-testid="image-png"
+                    srcset="/assets/img/png/pokeball-64.png"
+                    type="image/png"
+                  />
+                  <img
+                    alt="Play"
+                    class="emotion-8"
+                    data-testid="image-regular"
+                    height="64"
+                    loading="lazy"
+                    src="/assets/img/png/pokeball-64.png"
+                    width="64"
+                  />
+                </picture>
+                <p>
+                  Play
+                </p>
+              </div>
+            </a>
+            <a
+              class="emotion-24"
+              href="/my-pokemon"
+            >
+              <div
+                class="emotion-25"
+              >
+                <picture>
+                  <source
+                    data-testid="image-webp"
+                    srcset="/assets/img/webp/pokemon-trainer-64.webp"
+                    type="image/webp"
+                  />
+                  <source
+                    data-testid="image-png"
+                    srcset="/assets/img/png/pokemon-trainer-64.png"
+                    type="image/png"
+                  />
+                  <img
+                    alt="My Pokemon"
+                    class="emotion-8"
+                    data-testid="image-regular"
+                    height="64"
+                    loading="lazy"
+                    src="/assets/img/png/pokemon-trainer-64.png"
+                    width="64"
+                  />
+                </picture>
+                <p>
+                  My Pokemon
+                </p>
+              </div>
+            </a>
+          </div>
+        </nav>
+      </div>
     </div>
   </body>,
-  "container": <div>
-    Loading...
+  "container": @keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex-wrap: nowrap;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-1 {
+  background-color: #E53935;
+  width: 100%;
+}
+
+.emotion-1 * {
+  color: #fff269!important;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.emotion-3 img {
+  width: 100%;
+  height: 3rem;
+  object-position: center;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-3 {
+    width: auto;
+  }
+}
+
+.emotion-4 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-6 {
+  border-radius: 0.375rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid transparent;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 img {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+}
+
+.emotion-7 p {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1rem;
+  margin: 0rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-15 {
+  border-radius: 0.375rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0rem;
+  position: absolute;
+  right: 0;
+  margin-right: 0.25rem;
+}
+
+.emotion-15 svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-15 {
+    position: relative;
+    margin-right: 0rem;
+  }
+}
+
+.emotion-16 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-height: 100%;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.emotion-17 {
+  background-color: white;
+  width: 100%;
+}
+
+.emotion-17 h1 {
+  font-size: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  margin-right: 0.5rem;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-18 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-19 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.emotion-21 {
+  -webkit-animation: animation-0 3s infinite linear;
+  animation: animation-0 3s infinite linear;
+}
+
+.emotion-22 {
+  background-color: #E53935;
+  width: 100%;
+}
+
+.emotion-22 * {
+  color: #fff269!important;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-22 {
+    display: none;
+  }
+}
+
+.emotion-23 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 80rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .emotion-23 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.emotion-24 {
+  border-radius: 0.375rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-25 img {
+  width: 2rem;
+  height: 2rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-25 p {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 0rem;
+}
+
+<div>
+    <div
+      class="emotion-0"
+      wrap="nowrap"
+    >
+      <nav
+        class="emotion-1"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-3"
+          >
+            <picture>
+              <source
+                data-testid="image-webp"
+                srcset="/assets/img/webp/pokemon-logo-128.webp"
+                type="image/webp"
+              />
+              <source
+                data-testid="image-png"
+                srcset="/assets/img/png/pokemon-logo-128.png"
+                type="image/png"
+              />
+              <img
+                alt="Pokemon"
+                class="emotion-4"
+                data-testid="image-regular"
+                height="64"
+                loading="lazy"
+                src="/assets/img/png/pokemon-logo-128.png"
+                width="174"
+              />
+            </picture>
+          </div>
+          <ul
+            class="emotion-5"
+          >
+            <li>
+              <a
+                class="emotion-6"
+                href="/"
+              >
+                <div
+                  class="emotion-7"
+                >
+                  <picture>
+                    <source
+                      data-testid="image-webp"
+                      srcset="/assets/img/webp/pikachu-64.webp"
+                      type="image/webp"
+                    />
+                    <source
+                      data-testid="image-png"
+                      srcset="/assets/img/png/pikachu-64.png"
+                      type="image/png"
+                    />
+                    <img
+                      alt="Pokedex"
+                      class="emotion-8"
+                      data-testid="image-regular"
+                      height="64"
+                      loading="lazy"
+                      src="/assets/img/png/pikachu-64.png"
+                      width="64"
+                    />
+                  </picture>
+                  <p>
+                    Pokedex
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="emotion-6"
+                href="/my-pokemon"
+              >
+                <div
+                  class="emotion-7"
+                >
+                  <picture>
+                    <source
+                      data-testid="image-webp"
+                      srcset="/assets/img/webp/pokemon-trainer-64.webp"
+                      type="image/webp"
+                    />
+                    <source
+                      data-testid="image-png"
+                      srcset="/assets/img/png/pokemon-trainer-64.png"
+                      type="image/png"
+                    />
+                    <img
+                      alt="My Pokemon"
+                      class="emotion-8"
+                      data-testid="image-regular"
+                      height="64"
+                      loading="lazy"
+                      src="/assets/img/png/pokemon-trainer-64.png"
+                      width="64"
+                    />
+                  </picture>
+                  <p>
+                    My Pokemon
+                  </p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a
+                class="emotion-6"
+                href="/play"
+              >
+                <div
+                  class="emotion-7"
+                >
+                  <picture>
+                    <source
+                      data-testid="image-webp"
+                      srcset="/assets/img/webp/pokeball-64.webp"
+                      type="image/webp"
+                    />
+                    <source
+                      data-testid="image-png"
+                      srcset="/assets/img/png/pokeball-64.png"
+                      type="image/png"
+                    />
+                    <img
+                      alt="Play"
+                      class="emotion-8"
+                      data-testid="image-regular"
+                      height="64"
+                      loading="lazy"
+                      src="/assets/img/png/pokeball-64.png"
+                      width="64"
+                    />
+                  </picture>
+                  <p>
+                    Play
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <a
+            aria-label="About"
+            class="emotion-15"
+            href="/about"
+          >
+            <svg>
+              question-circle.svg
+            </svg>
+          </a>
+        </div>
+      </nav>
+      <div
+        class="emotion-16"
+      >
+        <header
+          class="emotion-17"
+        >
+          <div
+            class="emotion-18"
+          >
+            <h1>
+              Pokedex
+            </h1>
+          </div>
+        </header>
+        <main
+          class="emotion-19"
+        >
+          <div
+            class="emotion-20"
+          >
+            <picture>
+              <source
+                data-testid="image-webp"
+                srcset="/assets/img/webp/pokeball-64.webp"
+                type="image/webp"
+              />
+              <source
+                data-testid="image-png"
+                srcset="/assets/img/png/pokeball-64.png"
+                type="image/png"
+              />
+              <img
+                alt="Loading"
+                class="emotion-21"
+                data-testid="image-regular"
+                height="64"
+                loading="lazy"
+                src="/assets/img/png/pokeball-64.png"
+                width="64"
+              />
+            </picture>
+          </div>
+        </main>
+      </div>
+      <nav
+        class="emotion-22"
+      >
+        <div
+          class="emotion-23"
+          cols="3"
+        >
+          <a
+            class="emotion-24"
+            href="/"
+          >
+            <div
+              class="emotion-25"
+            >
+              <picture>
+                <source
+                  data-testid="image-webp"
+                  srcset="/assets/img/webp/pikachu-64.webp"
+                  type="image/webp"
+                />
+                <source
+                  data-testid="image-png"
+                  srcset="/assets/img/png/pikachu-64.png"
+                  type="image/png"
+                />
+                <img
+                  alt="Pokedex"
+                  class="emotion-8"
+                  data-testid="image-regular"
+                  height="64"
+                  loading="lazy"
+                  src="/assets/img/png/pikachu-64.png"
+                  width="64"
+                />
+              </picture>
+              <p>
+                Pokedex
+              </p>
+            </div>
+          </a>
+          <a
+            class="emotion-24"
+            href="/play"
+          >
+            <div
+              class="emotion-25"
+            >
+              <picture>
+                <source
+                  data-testid="image-webp"
+                  srcset="/assets/img/webp/pokeball-64.webp"
+                  type="image/webp"
+                />
+                <source
+                  data-testid="image-png"
+                  srcset="/assets/img/png/pokeball-64.png"
+                  type="image/png"
+                />
+                <img
+                  alt="Play"
+                  class="emotion-8"
+                  data-testid="image-regular"
+                  height="64"
+                  loading="lazy"
+                  src="/assets/img/png/pokeball-64.png"
+                  width="64"
+                />
+              </picture>
+              <p>
+                Play
+              </p>
+            </div>
+          </a>
+          <a
+            class="emotion-24"
+            href="/my-pokemon"
+          >
+            <div
+              class="emotion-25"
+            >
+              <picture>
+                <source
+                  data-testid="image-webp"
+                  srcset="/assets/img/webp/pokemon-trainer-64.webp"
+                  type="image/webp"
+                />
+                <source
+                  data-testid="image-png"
+                  srcset="/assets/img/png/pokemon-trainer-64.png"
+                  type="image/png"
+                />
+                <img
+                  alt="My Pokemon"
+                  class="emotion-8"
+                  data-testid="image-regular"
+                  height="64"
+                  loading="lazy"
+                  src="/assets/img/png/pokemon-trainer-64.png"
+                  width="64"
+                />
+              </picture>
+              <p>
+                My Pokemon
+              </p>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
