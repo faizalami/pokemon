@@ -1,7 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 export const selectPokemons = state => state.pokemons;
-export const selectPokemonsLoading = state => state.pokemons.loading;
+export const selectLoading = state => state.pokemons.loading;
+export const selectCurrentOffset = state => state.pokemons.current_offset;
 
 export const selectPokemonData = createSelector(
   [selectPokemons],

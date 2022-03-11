@@ -22,7 +22,7 @@ import mediaQueries from '../../components/media-queries';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getPokemonDetail } from '../../redux/pokemons/pokemons.actions';
-import { selectPokemonDetail, selectPokemonsLoading } from '../../redux/pokemons/pokemons.selectors';
+import { selectPokemonDetail, selectLoading } from '../../redux/pokemons/pokemons.selectors';
 import Loading from '../../components/Loading';
 
 ChartJS.register(
@@ -35,13 +35,13 @@ ChartJS.register(
 );
 
 const shapeConvert = {
-  heads: 'head',
+  ball: 'head',
   legs: 'head-legs',
   fish: 'fins',
   armor: 'insectoid',
   quadruped: 'quadruped',
   'bug-wings': 'wings-multiple',
-  ball: 'multiple',
+  heads: 'multiple',
   tentacles: 'tentacles',
   blob: 'head-base',
   upright: 'bipedal-tailed',
@@ -120,7 +120,7 @@ const radarWrapper = css`
 function PokemonDetail () {
   const dispatch = useDispatch();
   const { name } = useParams();
-  const loading = useSelector(selectPokemonsLoading);
+  const loading = useSelector(selectLoading);
 
   const dispatchGetDetail = useCallback(() => {
     dispatch(getPokemonDetail(name));

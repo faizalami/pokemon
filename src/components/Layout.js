@@ -171,17 +171,17 @@ function Layout (props) {
         </Flex>
       </nav>
 
-      <div css={mainContent}>
+      <main css={mainContent}>
         {props.title ? <PageHeader>{props.title}</PageHeader> : null}
 
-        <Flex as="main" container css={margin.b8}>
+        <Flex as="article" container css={margin.b8}>
           {props.children || (
             <Suspense fallback={<Loading/>}>
               <Outlet/>
             </Suspense>
           )}
         </Flex>
-      </div>
+      </main>
 
       <nav css={[navStyle, lgHide]}>
         <Grid container cols={3}>

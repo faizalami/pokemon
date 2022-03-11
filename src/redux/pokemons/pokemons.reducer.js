@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getAllPokemons, getPokemonDetail } from './pokemons.actions';
 
 export const initialState = {
-  current_offset: 0,
+  current_offset: -1,
   loading: false,
   data: [],
   detail: null,
@@ -21,13 +21,12 @@ const pokemonsSlice = createSlice({
     [getAllPokemons.fulfilled]: (state, action) => {
       const { current_offset, data, error } = action.payload;
 
-      return {
-        ...state,
-        current_offset,
-        data: [...state.data, ...data],
-        error,
-        loading: false,
-      };
+      if (state.current_offset < current_offset) {
+        state.data = [...state.data, ...data];
+        state.current_offset = current_offset;
+      }
+      state.error = error;
+      state.loading = false;
     },
     [getPokemonDetail.pending]: setLoading,
     [getPokemonDetail.fulfilled]: (state, action) => {
