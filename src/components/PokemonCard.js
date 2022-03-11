@@ -12,13 +12,12 @@ const CardWrapper = styled(Flex)`
   ${rounded}
 `;
 
-const cardThumbnailStyle = (color) => css`
+const cardThumbnailStyle = css`
   position: relative;
   height: 150px;
 
   .thumbnail-background {
     position: absolute;
-    background-color: ${color || gray};
     height: 150px;
     border: 0.5rem solid transparent;
     opacity: 0.7;
@@ -35,6 +34,8 @@ const cardThumbnailStyle = (color) => css`
     ${width.full}
   }
 `;
+
+const cardThumbnailBackground = color => css`background-color: ${color}`;
 
 const displayInline = css`display: inline-block`;
 
@@ -56,8 +57,8 @@ function PokemonCard ({ id, name, nickname, species }) {
   return (
     <ButtonLink to={`/pokemon/${name}`} variant="link" css={[padding.a0, displayInline]}>
       <CardWrapper column>
-        <div css={cardThumbnailStyle(species?.color?.name)}>
-          <div className="thumbnail-background"/>
+        <div css={cardThumbnailStyle}>
+          <div className="thumbnail-background" css={cardThumbnailBackground(species?.color?.name)}/>
           <Image
             src={`${process.env.REACT_APP_DREAM_WORLD_URL}${id}.svg`}
             alt={name}
