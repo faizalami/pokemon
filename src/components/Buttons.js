@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { lightGray, gray, darkGray, indigo, darkIndigo, red, darkRed, pokeBallRed, pokeBallDarkRed } from './variables';
+import { lightGray, gray, darkGray, pokeBallRed, pokeBallDarkRed } from './variables';
 import { padding } from './utilities';
 import { applyFlexTo } from './FlexGrid';
 import { Link } from 'react-router-dom';

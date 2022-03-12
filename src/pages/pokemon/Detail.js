@@ -187,7 +187,7 @@ function PokemonDetail () {
         },
       },
     };
-  }, [detail, radarColor]);
+  }, [radarColor]);
 
   if (name && error) {
     return <ErrorPage code={404} message="Whoops, Pokemon Not Found."/>;
