@@ -73,9 +73,7 @@ function CatchingModal () {
           css={pikachu}
         />
       </Flex>
-      <Flex>
-        <h2>Catching Pokemon . . .</h2>
-      </Flex>
+      <h2>Catching Pokemon . . .</h2>
     </BaseModal>
   );
 }
