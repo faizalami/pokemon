@@ -14,3 +14,11 @@ export const selectMyPokemonData = createSelector(
   [selectMyPokemons],
   myPokemons => myPokemons.data,
 );
+
+export const selectMyPokemonById = createSelector(
+  [
+    selectMyPokemonData,
+    (state, id) => id,
+  ],
+  (data, id) => data.filter(pokemon => pokemon.id === id),
+);
