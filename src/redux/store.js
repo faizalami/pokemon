@@ -8,7 +8,7 @@ const reducer = {
 };
 
 const store = configureStore({
-  reducer: reducer,
+  reducer,
 });
 
 export default store;

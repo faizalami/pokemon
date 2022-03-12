@@ -32,6 +32,9 @@ const myPokemonsSlice = createSlice({
         state.error = false;
       }
     },
+    deletePokemon (state, action) {
+      state.data = state.data.filter(pokemon => pokemon.nickname_id !== action.payload);
+    },
   },
   extraReducers: {
     [catchPokemon.pending]: state => {
@@ -52,5 +55,6 @@ const myPokemonsSlice = createSlice({
 const { actions, reducer: myPokemons } = myPokemonsSlice;
 export const {
   storeCaughtPokemon,
+  deletePokemon,
 } = actions;
 export default myPokemons;

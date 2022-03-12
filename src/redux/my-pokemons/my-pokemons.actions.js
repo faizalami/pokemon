@@ -16,7 +16,7 @@ export const catchPokemon = createAsyncThunk(
             pokemon: null,
           });
         }
-      }, 5000);
+      }, 3000);
     });
   },
 );

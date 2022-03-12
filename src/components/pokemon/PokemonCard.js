@@ -6,6 +6,8 @@ import { darkGray, gray } from '../variables';
 import Image from '../Image';
 import { css } from '@emotion/react';
 import { Button, ButtonLink } from '../Buttons';
+import { useDispatch } from 'react-redux';
+import { deletePokemon } from '../../redux/my-pokemons/my-pokemons.reducer';
 
 const CardWrapper = styled(Flex)`
   border: 1px solid ${gray};
@@ -70,7 +72,13 @@ const releaseButtonStyle = css`
   }
 `;
 
-function PokemonCard ({ id, name, nickname, species }) {
+function PokemonCard ({ id, nickname_id, name, nickname, species }) {
+  const dispatch = useDispatch();
+
+  const handleReleaseClick = () => {
+    dispatch(deletePokemon(nickname_id));
+  };
+
   return (
     <CardWrapper column>
       <ButtonLink to={`/pokemon/${name}`} variant="link" css={[padding.a0, displayInline]}>
@@ -89,7 +97,7 @@ function PokemonCard ({ id, name, nickname, species }) {
         {nickname ? <PokemonOriginalName>{name}</PokemonOriginalName> : null}
       </ButtonLink>
       {nickname ? (
-        <Button css={releaseButtonStyle}>
+        <Button css={releaseButtonStyle} onClick={handleReleaseClick}>
           <Image
             png="/assets/img/png/pokeball-release-64.png"
             webp="/assets/img/webp/pokeball-release-64.webp"
