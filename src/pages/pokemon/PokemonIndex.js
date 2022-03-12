@@ -25,20 +25,27 @@ function PokemonIndex () {
   }, [dispatchGetAll]);
 
   useEffect(() => {
+    let allowRun = true;
     const main = document.querySelector('main');
 
     main.onscroll = debounce((event) => {
-      const {
-        scrollTop,
-        scrollHeight,
-        clientHeight,
-      } = event.target;
+      if (allowRun) {
+        const {
+          scrollTop,
+          scrollHeight,
+          clientHeight,
+        } = event.target;
 
-      if (clientHeight + scrollTop >= scrollHeight - 10 && scrollHeight > latestScrollHeight && !loading) {
-        setLatestScrollHeight(scrollHeight);
-        setPageOffset(pageOffset + 20);
+        if (clientHeight + scrollTop >= scrollHeight - 10 && scrollHeight > latestScrollHeight && !loading) {
+          setLatestScrollHeight(scrollHeight);
+          setPageOffset(pageOffset + 20);
+        }
       }
     }, 100);
+
+    return () => {
+      allowRun = false;
+    };
   }, [pageOffset, latestScrollHeight, loading]);
 
   useEffect(() => {
