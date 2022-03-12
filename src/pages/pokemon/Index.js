@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { Grid } from '../../components/FlexGrid';
-import PokemonCard from '../../components/PokemonCard';
+import PokemonCard from '../../components/pokemon/PokemonCard';
 import { width } from '../../components/utilities';
 import Loading from '../../components/Loading';
 

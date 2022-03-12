@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import { margin, padding, rounded, width } from './utilities';
-import { Flex } from './FlexGrid';
-import { darkGray, gray } from './variables';
-import Image from './Image';
+import { margin, padding, rounded, width } from '../utilities';
+import { Flex } from '../FlexGrid';
+import { darkGray, gray } from '../variables';
+import Image from '../Image';
 import { css } from '@emotion/react';
-import { Button, ButtonLink } from './Buttons';
+import { Button, ButtonLink } from '../Buttons';
 
 const CardWrapper = styled(Flex)`
   border: 1px solid ${gray};

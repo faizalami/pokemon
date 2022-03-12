@@ -25,6 +25,7 @@ import { getPokemonDetail } from '../../redux/pokemons/pokemons.actions';
 import { selectPokemonDetail, selectLoading, selectError } from '../../redux/pokemons/pokemons.selectors';
 import Loading from '../../components/Loading';
 import ErrorPage from '../errors/ErrorPage';
+import CatchButton from '../../components/pokemon/CatchButton';
 
 ChartJS.register(
   RadialLinearScale,
@@ -118,6 +119,18 @@ const radarWrapper = css`
   }
 `;
 
+const catchButtonStyle = css`
+  position: fixed;
+  bottom: 5rem;
+  right: 1rem;
+
+  ${mediaQueries.lg} {
+    right: 5rem;
+  }
+`;
+
+const longMargin = css`margin-bottom: 8rem`;
+
 function PokemonDetail () {
   const dispatch = useDispatch();
   const { name } = useParams();
@@ -153,7 +166,7 @@ function PokemonDetail () {
         },
       ],
     };
-  }, [detail]);
+  }, [detail, radarColor]);
 
   const radarOptions = useMemo(() => {
     return {
@@ -174,7 +187,7 @@ function PokemonDetail () {
         },
       },
     };
-  }, [detail]);
+  }, [detail, radarColor]);
 
   if (name && error) {
     return <ErrorPage code={404} message="Whoops, Pokemon Not Found."/>;
@@ -189,7 +202,7 @@ function PokemonDetail () {
 
         <PageHeader>{detail.name}</PageHeader>
 
-        <Flex column css={width.full}>
+        <Flex column css={[width.full, longMargin]}>
           <Flex as="section" css={width.full}>
             <div css={pokemonImageStyle(detail.species?.color?.name)}>
               <div className="thumbnail-background"/>
@@ -290,6 +303,7 @@ function PokemonDetail () {
             </DetailSection>
           ) : null}
         </Flex>
+        <CatchButton css={catchButtonStyle}/>
       </>
     );
   }
