@@ -6,6 +6,7 @@ export const initialState = {
   loading: false,
   data: [],
   detail: null,
+  error: false,
 };
 
 const setLoading = state => ({
@@ -15,7 +16,7 @@ const setLoading = state => ({
 });
 
 const pokemonsSlice = createSlice({
-  name: 'pasien',
+  name: 'pokemons',
   initialState,
   extraReducers: {
     [getAllPokemons.pending]: setLoading,

@@ -26,6 +26,9 @@ import { selectPokemonDetail, selectLoading, selectError } from '../../redux/pok
 import Loading from '../../components/Loading';
 import ErrorPage from '../errors/ErrorPage';
 import CatchButton from '../../components/pokemon/CatchButton';
+import { catchPokemon } from '../../redux/my-pokemons/my-pokemons.actions';
+import CatchModals from '../../components/pokemon/CatchModals';
+import { selectMyPokemonLoading } from '../../redux/my-pokemons/my-pokemons.selectors';
 
 ChartJS.register(
   RadialLinearScale,
@@ -137,6 +140,8 @@ function PokemonDetail () {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
+  const catchLoading = useSelector(selectMyPokemonLoading);
+
   const dispatchGetDetail = useCallback(() => {
     dispatch(getPokemonDetail(name));
   }, [dispatch, name]);
@@ -188,6 +193,25 @@ function PokemonDetail () {
       },
     };
   }, [radarColor]);
+
+  const handleCatchClick = () => {
+    if (detail) {
+      let pokemonToCatch = {
+        id: detail.id,
+        name: detail.name,
+      };
+
+      if (detail.species?.color) {
+        pokemonToCatch.species = {
+          color: {
+            name: detail.species.color.name,
+          },
+        };
+      }
+
+      dispatch(catchPokemon(pokemonToCatch));
+    }
+  };
 
   if (name && error) {
     return <ErrorPage code={404} message="Whoops, Pokemon Not Found."/>;
@@ -303,7 +327,8 @@ function PokemonDetail () {
             </DetailSection>
           ) : null}
         </Flex>
-        <CatchButton css={catchButtonStyle}/>
+        <CatchButton css={catchButtonStyle} onClick={handleCatchClick}/>
+        <CatchModals loading={catchLoading}/>
       </>
     );
   }
