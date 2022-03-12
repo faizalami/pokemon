@@ -28,7 +28,11 @@ import ErrorPage from '../errors/ErrorPage';
 import CatchButton from '../../components/pokemon/CatchButton';
 import { catchPokemon } from '../../redux/my-pokemons/my-pokemons.actions';
 import CatchModals from '../../components/pokemon/CatchModals';
-import { selectCatchFailed, selectCatchLoading } from '../../redux/my-pokemons/my-pokemons.selectors';
+import {
+  selectCatchFailed,
+  selectCatchLoading,
+  selectCaughtPokemon,
+} from '../../redux/my-pokemons/my-pokemons.selectors';
 
 ChartJS.register(
   RadialLinearScale,
@@ -142,6 +146,7 @@ function PokemonDetail () {
 
   const catchLoading = useSelector(selectCatchLoading);
   const catchFailed = useSelector(selectCatchFailed);
+  const caughtPokemon = useSelector(selectCaughtPokemon);
 
   const dispatchGetDetail = useCallback(() => {
     dispatch(getPokemonDetail(name));
@@ -329,7 +334,7 @@ function PokemonDetail () {
           ) : null}
         </Flex>
         <CatchButton css={catchButtonStyle} onClick={handleCatchClick}/>
-        <CatchModals loading={catchLoading} failed={catchFailed}/>
+        <CatchModals loading={catchLoading} failed={catchFailed} pokemon={caughtPokemon}/>
       </>
     );
   }

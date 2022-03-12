@@ -17,7 +17,7 @@ const modalBackDrop = css`
 `;
 
 const modalContainer = css`
-  max-width: 75rem;
+  max-width: 48rem;
   background-color: white;
   border-top: 2rem solid ${pokeBallRed};
   border-bottom: 2rem solid ${pokeBallDark};

@@ -4,7 +4,7 @@ import { catchPokemon } from './my-pokemons.actions';
 export const initialState = {
   loading: false,
   data: [],
-  catched: null,
+  caught: null,
   failed: false,
 };
 
@@ -14,14 +14,14 @@ const myPokemonsSlice = createSlice({
   extraReducers: {
     [catchPokemon.pending]: state => {
       state.failed = false;
-      state.catched = null;
+      state.caught = null;
       state.loading = true;
     },
     [catchPokemon.fulfilled]: (state, action) => {
       const { success, pokemon } = action.payload;
 
       state.failed = !success;
-      state.catched = pokemon;
+      state.caught = pokemon;
       state.loading = false;
     },
   },
