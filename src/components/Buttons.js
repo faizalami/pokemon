@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { lightGray, gray, darkGray, indigo, darkIndigo, red, darkRed } from './variables';
+import { lightGray, gray, darkGray, indigo, darkIndigo, red, darkRed, pokeBallRed, pokeBallDarkRed } from './variables';
 import { padding } from './utilities';
 import { applyFlexTo } from './FlexGrid';
 import { Link } from 'react-router-dom';
@@ -29,24 +29,14 @@ function buttonVariants (variant) {
         background-color: rgba(0, 0, 0, 0.3);
         border: 1px solid transparent;
       `;
-    case 'danger':
-      return css`
-        color: white;
-        background-color: ${red};
-        border: 1px solid transparent;
-
-        &:hover, &:focus {
-          background-color: ${darkRed};
-        }
-      `;
     default:
       return css`
         color: white;
-        background-color: ${indigo};
+        background-color: ${pokeBallRed};
         border: 1px solid transparent;
 
         &:hover, &:focus {
-          background-color: ${darkIndigo};
+          background-color: ${pokeBallDarkRed};
         }
       `;
   }

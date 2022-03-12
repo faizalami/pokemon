@@ -2,14 +2,14 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { matchers } from '@emotion/jest';
 import { MemoryRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { Button, ButtonLink, CircleButton, CircleButtonLink } from '../Buttons';
-import { gray, indigo, red } from '../variables';
+import { gray, pokeBallRed } from '../variables';
 
 expect.extend(matchers);
 
 describe('Test Regular Buttons', () => {
   test('Regular button with only text as child', () => {
     render(<Button>Test</Button>);
-    expect(screen.getByText('Test')).toHaveStyleRule('background-color', indigo);
+    expect(screen.getByText('Test')).toHaveStyleRule('background-color', pokeBallRed);
   });
 
   test('Render outlined button', () => {
@@ -25,11 +25,6 @@ describe('Test Regular Buttons', () => {
   test('Render darken button', () => {
     render(<Button variant="darken">Test</Button>);
     expect(screen.getByText('Test')).toHaveStyleRule('background-color', 'rgba(0, 0, 0, 0.3)');
-  });
-
-  test('Render danger button', () => {
-    render(<Button variant="danger">Test</Button>);
-    expect(screen.getByText('Test')).toHaveStyleRule('background-color', red);
   });
 });
 

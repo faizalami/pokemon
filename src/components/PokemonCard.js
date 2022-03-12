@@ -5,7 +5,7 @@ import { Flex } from './FlexGrid';
 import { darkGray, gray } from './variables';
 import Image from './Image';
 import { css } from '@emotion/react';
-import { ButtonLink } from './Buttons';
+import { Button, ButtonLink } from './Buttons';
 
 const CardWrapper = styled(Flex)`
   border: 1px solid ${gray};
@@ -53,10 +53,27 @@ const PokemonOriginalName = styled.p`
   ${margin.t0}
 `;
 
+const releaseButtonStyle = css`
+  img {
+    display: inline-flex;
+    width: 1.25rem;
+    height: 1.25rem;
+    ${margin.t1}
+  }
+
+  p {
+    color: white;
+    display: inline-flex;
+    font-size: 1rem;
+    ${margin.a0}
+    ${margin.l2}
+  }
+`;
+
 function PokemonCard ({ id, name, nickname, species }) {
   return (
-    <ButtonLink to={`/pokemon/${name}`} variant="link" css={[padding.a0, displayInline]}>
-      <CardWrapper column>
+    <CardWrapper column>
+      <ButtonLink to={`/pokemon/${name}`} variant="link" css={[padding.a0, displayInline]}>
         <div css={cardThumbnailStyle}>
           <div className="thumbnail-background" css={cardThumbnailBackground(species?.color?.name)}/>
           <Image
@@ -70,8 +87,21 @@ function PokemonCard ({ id, name, nickname, species }) {
 
         <PokemonName>{nickname || name}</PokemonName>
         {nickname ? <PokemonOriginalName>{name}</PokemonOriginalName> : null}
-      </CardWrapper>
-    </ButtonLink>
+      </ButtonLink>
+      {nickname ? (
+        <Button css={releaseButtonStyle}>
+          <Image
+            png="/assets/img/png/pokeball-release-64.png"
+            webp="/assets/img/webp/pokeball-release-64.webp"
+            alt="Release"
+            lazy
+            width={64}
+            height={64}
+          />
+          <p>Release</p>
+        </Button>
+      ) : null}
+    </CardWrapper>
   );
 }
 

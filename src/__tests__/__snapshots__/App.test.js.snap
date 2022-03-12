@@ -108,6 +108,8 @@ Object {
 }
 
 .emotion-4 {
+  object-fit: contain;
+  object-position: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -209,6 +211,11 @@ Object {
   font-size: 1rem;
   margin: 0rem;
   margin-left: 0.5rem;
+}
+
+.emotion-8 {
+  object-fit: contain;
+  object-position: center;
 }
 
 .emotion-15 {
@@ -365,6 +372,8 @@ Object {
 }
 
 .emotion-21 {
+  object-fit: contain;
+  object-position: center;
   -webkit-animation: animation-0 3s infinite linear;
   animation: animation-0 3s infinite linear;
 }
@@ -622,7 +631,7 @@ Object {
             </a>
           </div>
         </nav>
-        <div
+        <main
           class="emotion-16"
         >
           <header
@@ -636,7 +645,7 @@ Object {
               </h1>
             </div>
           </header>
-          <main
+          <article
             class="emotion-19"
           >
             <div
@@ -664,8 +673,8 @@ Object {
                 />
               </picture>
             </div>
-          </main>
-        </div>
+          </article>
+        </main>
         <nav
           class="emotion-22"
         >
@@ -882,6 +891,8 @@ Object {
 }
 
 .emotion-4 {
+  object-fit: contain;
+  object-position: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -983,6 +994,11 @@ Object {
   font-size: 1rem;
   margin: 0rem;
   margin-left: 0.5rem;
+}
+
+.emotion-8 {
+  object-fit: contain;
+  object-position: center;
 }
 
 .emotion-15 {
@@ -1139,6 +1155,8 @@ Object {
 }
 
 .emotion-21 {
+  object-fit: contain;
+  object-position: center;
   -webkit-animation: animation-0 3s infinite linear;
   animation: animation-0 3s infinite linear;
 }
@@ -1395,7 +1413,7 @@ Object {
           </a>
         </div>
       </nav>
-      <div
+      <main
         class="emotion-16"
       >
         <header
@@ -1409,7 +1427,7 @@ Object {
             </h1>
           </div>
         </header>
-        <main
+        <article
           class="emotion-19"
         >
           <div
@@ -1437,8 +1455,8 @@ Object {
               />
             </picture>
           </div>
-        </main>
-      </div>
+        </article>
+      </main>
       <nav
         class="emotion-22"
       >

@@ -7,5 +7,6 @@ export const red = '#dc2626';
 export const darkRed = '#b91c1c';
 
 export const pokeBallRed = '#E53935';
+export const pokeBallDarkRed = '#cf3835';
 export const pokeBallDark = '#303C42';
 export const pikachuYellow = '#fff269';

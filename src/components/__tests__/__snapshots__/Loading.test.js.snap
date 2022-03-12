@@ -40,6 +40,8 @@ Object {
 }
 
 .emotion-1 {
+  object-fit: contain;
+  object-position: center;
   -webkit-animation: animation-0 3s infinite linear;
   animation: animation-0 3s infinite linear;
 }
@@ -110,6 +112,8 @@ Object {
 }
 
 .emotion-1 {
+  object-fit: contain;
+  object-position: center;
   -webkit-animation: animation-0 3s infinite linear;
   animation: animation-0 3s infinite linear;
 }

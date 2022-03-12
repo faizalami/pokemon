@@ -92,6 +92,8 @@ Object {
 }
 
 .emotion-4 {
+  object-fit: contain;
+  object-position: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -193,6 +195,11 @@ Object {
   font-size: 1rem;
   margin: 0rem;
   margin-left: 0.5rem;
+}
+
+.emotion-8 {
+  object-fit: contain;
+  object-position: center;
 }
 
 .emotion-15 {
@@ -535,13 +542,13 @@ Object {
             </a>
           </div>
         </nav>
-        <div
+        <main
           class="emotion-16"
         >
-          <main
+          <article
             class="emotion-17"
           />
-        </div>
+        </main>
         <nav
           class="emotion-18"
         >
@@ -742,6 +749,8 @@ Object {
 }
 
 .emotion-4 {
+  object-fit: contain;
+  object-position: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -843,6 +852,11 @@ Object {
   font-size: 1rem;
   margin: 0rem;
   margin-left: 0.5rem;
+}
+
+.emotion-8 {
+  object-fit: contain;
+  object-position: center;
 }
 
 .emotion-15 {
@@ -1184,13 +1198,13 @@ Object {
           </a>
         </div>
       </nav>
-      <div
+      <main
         class="emotion-16"
       >
-        <main
+        <article
           class="emotion-17"
         />
-      </div>
+      </main>
       <nav
         class="emotion-18"
       >
