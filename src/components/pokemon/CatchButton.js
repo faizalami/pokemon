@@ -65,7 +65,7 @@ function CatchButton ({ className, onClick }) {
         lazy
         width={64}
         height={64}
-        imageCss={iconShake}
+        css={iconShake}
       />
       <p css={buttonLabel}>Catch!</p>
     </Button>

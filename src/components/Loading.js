@@ -27,7 +27,7 @@ function Loading () {
         lazy
         width={64}
         height={64}
-        imageCss={loadingIconStyle}
+        css={loadingIconStyle}
       />
     </Flex>
   );

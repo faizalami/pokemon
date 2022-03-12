@@ -134,7 +134,7 @@ function Layout (props) {
               lazy
               width={174}
               height={64}
-              imageCss={margin.xAuto}
+              css={margin.xAuto}
             />
           </Flex>
 

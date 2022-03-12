@@ -274,7 +274,7 @@ function PokemonDetail () {
                       lazy
                       width={16}
                       height={16}
-                      imageCss={movesImageStyle}
+                      css={movesImageStyle}
                     />
                   ) : null}
                   {move.move.name}
@@ -294,7 +294,7 @@ function PokemonDetail () {
                       lazy
                       width={16}
                       height={16}
-                      imageCss={movesImageStyle}
+                      css={movesImageStyle}
                     />
                     {move}
                   </Flex>

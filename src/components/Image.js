@@ -6,7 +6,7 @@ const defaultStyle = css`
   object-position: center;
 `;
 
-function Image ({ webp, png, src, alt, lazy, width, height, imageCss }) {
+function Image ({ webp, png, src, alt, lazy, width, height, className }) {
   return (
     <picture>
       {webp ? <source type="image/webp" srcSet={webp} data-testid="image-webp"/> : null}
@@ -17,7 +17,8 @@ function Image ({ webp, png, src, alt, lazy, width, height, imageCss }) {
         loading={lazy ? 'lazy' : 'eager'}
         width={width}
         height={height}
-        css={[defaultStyle, imageCss]}
+        css={defaultStyle}
+        className={className}
         data-testid="image-regular"
       />
     </picture>
