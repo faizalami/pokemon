@@ -1,5 +1,4 @@
 import { createSelector } from '@reduxjs/toolkit';
-import myPokemons from './my-pokemons.reducer';
 
 export const selectMyPokemons = state => state.myPokemons;
 export const selectCatchLoading = state => state.myPokemons.loading;

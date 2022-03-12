@@ -5,7 +5,7 @@ import { margin, padding, rounded, textAlign, width } from '../utilities';
 import { Button } from '../Buttons';
 import { Flex } from '../FlexGrid';
 import { css } from '@emotion/react';
-import { pokeBallDark } from '../variables';
+import { pokeBallDark, red } from '../variables';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { storeCaughtPokemon } from '../../redux/my-pokemons/my-pokemons.reducer';
@@ -17,6 +17,13 @@ const nameInput = css`
   ${rounded}
   ${width.full}
   ${padding.a2}
+  ${margin.b2}
+`;
+
+const errorMessage = css`
+  color: ${red};
+  font-size: 0.75rem;
+  ${margin.a0}
   ${margin.b2}
 `;
 
@@ -51,7 +58,9 @@ function CatchSuccessModal ({ pokemon }) {
           value={name}
           onChange={event => setName(event.target.value)}
         />
-        {error ? 'Name already exist, try different name!' : null}
+        {error ? (
+          <p css={errorMessage}>Name already exist, try different name!</p>
+        ) : null}
         <Button type="submit">Save</Button>
       </Flex>
     </BaseModal>
