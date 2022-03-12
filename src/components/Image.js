@@ -1,4 +1,10 @@
 /** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+
+const defaultStyle = css`
+  object-fit: contain;
+  object-position: center;
+`;
 
 function Image ({ webp, png, src, alt, lazy, width, height, imageCss }) {
   return (
@@ -11,7 +17,7 @@ function Image ({ webp, png, src, alt, lazy, width, height, imageCss }) {
         loading={lazy ? 'lazy' : 'eager'}
         width={width}
         height={height}
-        css={imageCss}
+        css={[defaultStyle, imageCss]}
         data-testid="image-regular"
       />
     </picture>

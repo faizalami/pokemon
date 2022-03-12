@@ -22,8 +22,9 @@ import mediaQueries from '../../components/media-queries';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getPokemonDetail } from '../../redux/pokemons/pokemons.actions';
-import { selectPokemonDetail, selectLoading } from '../../redux/pokemons/pokemons.selectors';
+import { selectPokemonDetail, selectLoading, selectError } from '../../redux/pokemons/pokemons.selectors';
 import Loading from '../../components/Loading';
+import ErrorPage from '../errors/ErrorPage';
 
 ChartJS.register(
   RadialLinearScale,
@@ -121,6 +122,7 @@ function PokemonDetail () {
   const dispatch = useDispatch();
   const { name } = useParams();
   const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
   const dispatchGetDetail = useCallback(() => {
     dispatch(getPokemonDetail(name));
@@ -134,10 +136,10 @@ function PokemonDetail () {
 
   const radarDataSet = useMemo(() => {
     return {
-      labels: detail?.stats.map(stat => stat.stat.name.replace('-', ' ')) || [],
+      labels: detail?.stats?.map(stat => stat.stat.name.replace('-', ' ')) || [],
       datasets: [
         {
-          data: detail?.stats.map(stat => stat.base_stat) || [],
+          data: detail?.stats?.map(stat => stat.base_stat) || [],
           borderWidth: 1,
           borderColor: detail?.species?.color?.name || gray,
         },
@@ -165,6 +167,10 @@ function PokemonDetail () {
       },
     };
   }, [detail]);
+
+  if (name && error) {
+    return <ErrorPage code={404} message="Whoops, Pokemon Not Found."/>;
+  }
 
   if (!loading && detail) {
     return (

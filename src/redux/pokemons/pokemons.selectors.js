@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 export const selectPokemons = state => state.pokemons;
 export const selectLoading = state => state.pokemons.loading;
 export const selectCurrentOffset = state => state.pokemons.current_offset;
+export const selectError = state => state.pokemons.error;
 
 export const selectPokemonData = createSelector(
   [selectPokemons],

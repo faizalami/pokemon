@@ -37,7 +37,7 @@ export const getPokemonDetail = createAsyncThunk(
 
       return {
         detail: data.pokemon?.[0] || null,
-        error: false,
+        error: !data.pokemon.length,
       };
     } catch (error) {
       return {

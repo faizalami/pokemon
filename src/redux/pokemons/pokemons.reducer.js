@@ -11,6 +11,7 @@ export const initialState = {
 const setLoading = state => ({
   ...state,
   loading: true,
+  error: false,
 });
 
 const pokemonsSlice = createSlice({
@@ -28,13 +29,16 @@ const pokemonsSlice = createSlice({
       state.error = error;
       state.loading = false;
     },
-    [getPokemonDetail.pending]: setLoading,
+    [getPokemonDetail.pending]: state => {
+      setLoading(state);
+      state.detail = null;
+    },
     [getPokemonDetail.fulfilled]: (state, action) => {
       const { detail, error } = action.payload;
 
       return {
         ...state,
-        detail: { ...detail },
+        detail: detail ? { ...detail } : null,
         error,
         loading: false,
       };
