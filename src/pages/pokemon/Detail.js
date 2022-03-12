@@ -134,6 +134,14 @@ function PokemonDetail () {
 
   const detail = useSelector(selectPokemonDetail);
 
+  const radarColor = useMemo(() => {
+    const color = detail?.species?.color?.name || gray;
+    if (color === 'white') {
+      return gray;
+    }
+    return color;
+  }, [detail]);
+
   const radarDataSet = useMemo(() => {
     return {
       labels: detail?.stats?.map(stat => stat.stat.name.replace('-', ' ')) || [],
@@ -141,7 +149,7 @@ function PokemonDetail () {
         {
           data: detail?.stats?.map(stat => stat.base_stat) || [],
           borderWidth: 1,
-          borderColor: detail?.species?.color?.name || gray,
+          borderColor: radarColor,
         },
       ],
     };
@@ -150,7 +158,7 @@ function PokemonDetail () {
   const radarOptions = useMemo(() => {
     return {
       pointRadius: 10,
-      pointBackgroundColor: detail?.species?.color?.name || gray,
+      pointBackgroundColor: radarColor,
       plugins: {
         legend: { display: false },
       },
