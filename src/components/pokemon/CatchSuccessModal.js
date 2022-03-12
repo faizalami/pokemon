@@ -6,6 +6,10 @@ import { Button } from '../Buttons';
 import { Flex } from '../FlexGrid';
 import { css } from '@emotion/react';
 import { pokeBallDark } from '../variables';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { storeCaughtPokemon } from '../../redux/my-pokemons/my-pokemons.reducer';
+import { selectCatchError } from '../../redux/my-pokemons/my-pokemons.selectors';
 
 const nameInput = css`
   font-size: 1rem;
@@ -16,7 +20,17 @@ const nameInput = css`
   ${margin.b2}
 `;
 
-function CatchSuccessModal ({ pokemon, onAdded }) {
+function CatchSuccessModal ({ pokemon }) {
+  const dispatch = useDispatch();
+  const [name, setName] = useState('');
+  const error = useSelector(selectCatchError);
+
+  const handleFormSubmit = event => {
+    event.preventDefault();
+
+    dispatch(storeCaughtPokemon(name));
+  };
+
   return (
     <BaseModal>
       <Image
@@ -28,9 +42,17 @@ function CatchSuccessModal ({ pokemon, onAdded }) {
       />
       <h2 css={textAlign.center}>Yay, We got {pokemon.name}, give it a name !</h2>
 
-      <Flex as="form" lg={{ alignItems: 'center' }} column css={width.full}>
-        <input type="text" name="name" aria-label="Pokemon Name" css={nameInput}/>
-        <Button onClick={onAdded}>Save</Button>
+      <Flex as="form" lg={{ alignItems: 'center' }} column css={width.full} onSubmit={handleFormSubmit}>
+        <input
+          type="text"
+          name="name"
+          aria-label="Pokemon Name"
+          css={nameInput}
+          value={name}
+          onChange={event => setName(event.target.value)}
+        />
+        {error ? 'Name already exist, try different name!' : null}
+        <Button type="submit">Save</Button>
       </Flex>
     </BaseModal>
   );

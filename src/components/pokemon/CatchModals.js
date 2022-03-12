@@ -5,15 +5,10 @@ import CatchSuccessModal from './CatchSuccessModal';
 
 function CatchModals ({ loading, failed, pokemon }) {
   const [catchFailed, setCatchFailed] = useState(false);
-  const [caughtPokemon, setCaughtPokemon] = useState(null);
 
   useEffect(() => {
     setCatchFailed(failed);
-  }, [failed])
-
-  useEffect(() => {
-    setCaughtPokemon(pokemon);
-  }, [pokemon])
+  }, [failed]);
 
   if (loading) {
     return (<CatchingModal/>);
@@ -23,8 +18,8 @@ function CatchModals ({ loading, failed, pokemon }) {
     return (<CatchFailedModal onClose={() => setCatchFailed(false)}/>);
   }
 
-  if (caughtPokemon) {
-    return (<CatchSuccessModal pokemon={caughtPokemon} onAdded={() => setCaughtPokemon(null)}/>)
+  if (pokemon) {
+    return (<CatchSuccessModal pokemon={pokemon}/>);
   }
 
   return null;
