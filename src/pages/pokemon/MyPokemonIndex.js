@@ -1,52 +1,23 @@
+/** @jsxImportSource @emotion/react */
 import Index from './Index';
 import { Helmet } from 'react-helmet-async';
-
-const dummyData = [
-  {
-    'id': 1,
-    'nickname_id': 1,
-    'name': 'bulbasaur',
-    'nickname': 'Joni',
-  },
-  {
-    'id': 2,
-    'nickname_id': 2,
-    'name': 'ivysaur',
-    'nickname': 'Jono',
-  },
-  {
-    'id': 1,
-    'nickname_id': 3,
-    'name': 'bulbasaur',
-    'nickname': 'Bambang',
-  },
-  {
-    'id': 2,
-    'nickname_id': 4,
-    'name': 'ivysaur',
-    'nickname': 'Samsul',
-  },
-  {
-    'id': 1,
-    'nickname_id': 5,
-    'name': 'bulbasaur',
-    'nickname': 'Samuel',
-  },
-  {
-    'id': 2,
-    'nickname_id': 6,
-    'name': 'ivysaur',
-    'nickname': 'Sontoloyo',
-  },
-];
+import { useSelector } from 'react-redux';
+import { selectMyPokemonData } from '../../redux/my-pokemons/my-pokemons.selectors';
+import { textAlign, width } from '../../components/utilities';
 
 function MyPokemonIndex () {
+  const data = useSelector(selectMyPokemonData);
+
   return (
     <>
       <Helmet>
         <title>My Pokemon | Pokemon</title>
       </Helmet>
-      <Index data={dummyData}/>
+      {
+        data.length ?
+          (<Index data={data}/>) :
+          (<p css={[textAlign.center, width.full]}>I don't have pokemon (ㄒoㄒ)</p>)
+      }
     </>
   );
 }
