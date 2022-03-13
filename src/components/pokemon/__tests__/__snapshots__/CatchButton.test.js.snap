@@ -152,7 +152,7 @@ Object {
             type="image/png"
           />
           <img
-            alt="Release"
+            alt="Catch!"
             class="emotion-1"
             data-testid="image-regular"
             height="64"
@@ -317,7 +317,7 @@ Object {
           type="image/png"
         />
         <img
-          alt="Release"
+          alt="Catch!"
           class="emotion-1"
           data-testid="image-regular"
           height="64"

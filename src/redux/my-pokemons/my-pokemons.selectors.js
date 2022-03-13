@@ -15,6 +15,16 @@ export const selectMyPokemonData = createSelector(
   myPokemons => myPokemons.data,
 );
 
+export const selectMyPokemonTotalEachId = createSelector(
+  [selectMyPokemonData],
+  data => data.reduce((totals, pokemon) => {
+    return {
+      ...totals,
+      [pokemon.id]: totals[pokemon.id] ? totals[pokemon.id] + 1 : 1,
+    };
+  }, {}),
+);
+
 export const selectMyPokemonById = createSelector(
   [
     selectMyPokemonData,

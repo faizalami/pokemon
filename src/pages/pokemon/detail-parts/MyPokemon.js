@@ -26,7 +26,7 @@ function MyPokemon ({ pokemonId }) {
   if (data.length) {
     return (
       <DetailSection title="My Pokemons">
-        <Grid as="ul" cols={2} lg={{ cols: 'auto' }} gap={4} css={[width.full, padding.x4]}>
+        <Grid as="ul" cols={2} lg={{ cols: 4 }} gap={4} css={[width.full, padding.x4]}>
           {data.map(pokemon => (
             <Flex as="li" key={pokemon.nickname_id}>
               {pokemon.nickname}

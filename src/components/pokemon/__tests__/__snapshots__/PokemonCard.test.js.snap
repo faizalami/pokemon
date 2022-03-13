@@ -68,7 +68,7 @@ Object {
   width: 100%;
 }
 
-.emotion-2 img {
+.emotion-2 .thumbnail-image {
   position: absolute;
   object-position: center;
   object-fit: contain;
@@ -83,6 +83,56 @@ Object {
 }
 
 .emotion-5 {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.emotion-5 * {
+  position: absolute;
+}
+
+.emotion-5 img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.emotion-5 .pokemon-total {
+  color: #cf3835;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.4rem;
+  border: 1.5px solid #303C42;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-8 {
   font-weight: normal;
   text-align: center;
   margin: 0.5rem;
@@ -107,7 +157,7 @@ Object {
             <picture>
               <img
                 alt="bulbasaur"
-                class="emotion-4"
+                class="thumbnail-image emotion-4"
                 data-testid="image-regular"
                 height="300"
                 loading="lazy"
@@ -115,9 +165,39 @@ Object {
                 width="300"
               />
             </picture>
+            <div
+              class="emotion-5"
+            >
+              <picture>
+                <source
+                  data-testid="image-webp"
+                  srcset="/assets/img/webp/pokeball-64.webp"
+                  type="image/webp"
+                />
+                <source
+                  data-testid="image-png"
+                  srcset="/assets/img/png/pokeball-64.png"
+                  type="image/png"
+                />
+                <img
+                  alt="Release"
+                  class="emotion-4"
+                  data-testid="image-regular"
+                  height="24"
+                  loading="lazy"
+                  src="/assets/img/png/pokeball-64.png"
+                  width="24"
+                />
+              </picture>
+              <div
+                class="pokemon-total emotion-7"
+              >
+                5
+              </div>
+            </div>
           </div>
           <h2
-            class="emotion-5"
+            class="emotion-8"
           >
             bulbasaur
           </h2>
@@ -190,7 +270,7 @@ Object {
   width: 100%;
 }
 
-.emotion-2 img {
+.emotion-2 .thumbnail-image {
   position: absolute;
   object-position: center;
   object-fit: contain;
@@ -205,6 +285,56 @@ Object {
 }
 
 .emotion-5 {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.emotion-5 * {
+  position: absolute;
+}
+
+.emotion-5 img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.emotion-5 .pokemon-total {
+  color: #cf3835;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0.4rem;
+  border: 1.5px solid #303C42;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-8 {
   font-weight: normal;
   text-align: center;
   margin: 0.5rem;
@@ -228,7 +358,7 @@ Object {
           <picture>
             <img
               alt="bulbasaur"
-              class="emotion-4"
+              class="thumbnail-image emotion-4"
               data-testid="image-regular"
               height="300"
               loading="lazy"
@@ -236,9 +366,39 @@ Object {
               width="300"
             />
           </picture>
+          <div
+            class="emotion-5"
+          >
+            <picture>
+              <source
+                data-testid="image-webp"
+                srcset="/assets/img/webp/pokeball-64.webp"
+                type="image/webp"
+              />
+              <source
+                data-testid="image-png"
+                srcset="/assets/img/png/pokeball-64.png"
+                type="image/png"
+              />
+              <img
+                alt="Release"
+                class="emotion-4"
+                data-testid="image-regular"
+                height="24"
+                loading="lazy"
+                src="/assets/img/png/pokeball-64.png"
+                width="24"
+              />
+            </picture>
+            <div
+              class="pokemon-total emotion-7"
+            >
+              5
+            </div>
+          </div>
         </div>
         <h2
-          class="emotion-5"
+          class="emotion-8"
         >
           bulbasaur
         </h2>

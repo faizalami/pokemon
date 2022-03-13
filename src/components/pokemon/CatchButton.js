@@ -61,7 +61,7 @@ function CatchButton ({ className, onClick }) {
       <Image
         png="/assets/img/png/pokeball-64.png"
         webp="/assets/img/webp/pokeball-64.webp"
-        alt="Release"
+        alt="Catch!"
         lazy
         width={64}
         height={64}

@@ -23,7 +23,7 @@ describe('Test Pokemon Card', () => {
     expect(render(
       <Provider store={store}>
         <MemoryRouter>
-          <PokemonCard {...dummy} />
+          <PokemonCard {...dummy} pokemonsTotal={{ 1: 5 }}/>
         </MemoryRouter>
       </Provider>,
     )).toMatchSnapshot();
@@ -48,5 +48,22 @@ describe('Test Pokemon Card', () => {
     const realName = screen.queryByText(dummy.name);
     expect(displayName.tagName).toBe('H2');
     expect(realName).toBeInTheDocument();
+  });
+
+  test('using total > 9', () => {
+    const dummy = {
+      id: 1,
+      name: 'bulbasaur',
+    };
+
+    render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <PokemonCard {...dummy} pokemonsTotal={{ 1: 15 }}/>
+        </MemoryRouter>
+      </Provider>,
+    );
+
+    expect(screen.getByText('9+')).toBeInTheDocument();
   });
 });
