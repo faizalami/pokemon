@@ -6,8 +6,8 @@ import { darkGray, gray, pokeBallDark, pokeBallDarkRed } from '../variables';
 import Image from '../Image';
 import { css } from '@emotion/react';
 import { Button, ButtonLink } from '../Buttons';
-import { useDispatch } from 'react-redux';
-import { deletePokemon } from '../../redux/my-pokemons/my-pokemons.reducer';
+import { useState } from 'react';
+import ReleaseConfirmModal from './ReleaseConfirmModal';
 
 const CardWrapper = styled(Flex)`
   border: 1px solid ${gray};
@@ -121,47 +121,50 @@ function PokemonTotal ({ total }) {
 }
 
 function PokemonCard ({ id, nickname_id, name, nickname, species, pokemonsTotal }) {
-  const dispatch = useDispatch();
+  const [pokemonToDelete, setPokemonToDelete] = useState(null);
 
   const total = pokemonsTotal?.[id];
 
   const handleReleaseClick = () => {
-    dispatch(deletePokemon(nickname_id));
+    setPokemonToDelete({ nickname_id, nickname });
   };
 
   return (
-    <CardWrapper column>
-      <ButtonLink to={`/pokemon/${name}`} variant="link" css={[padding.a0, displayInline]}>
-        <div css={cardThumbnailStyle}>
-          <div className="thumbnail-background" css={cardThumbnailBackground(species?.color?.name)}/>
-          <Image
-            className="thumbnail-image"
-            src={`${process.env.REACT_APP_DREAM_WORLD_URL}${id}.svg`}
-            alt={name}
-            lazy
-            width={300}
-            height={300}
-          />
-          <PokemonTotal total={total}/>
-        </div>
+    <>
+      <CardWrapper column>
+        <ButtonLink to={`/pokemon/${name}`} variant="link" css={[padding.a0, displayInline]}>
+          <div css={cardThumbnailStyle}>
+            <div className="thumbnail-background" css={cardThumbnailBackground(species?.color?.name)}/>
+            <Image
+              className="thumbnail-image"
+              src={`${process.env.REACT_APP_DREAM_WORLD_URL}${id}.svg`}
+              alt={name}
+              lazy
+              width={300}
+              height={300}
+            />
+            <PokemonTotal total={total}/>
+          </div>
 
-        <PokemonName>{nickname || name}</PokemonName>
-        {nickname ? <PokemonOriginalName>{name}</PokemonOriginalName> : null}
-      </ButtonLink>
-      {nickname ? (
-        <Button css={releaseButtonStyle} onClick={handleReleaseClick}>
-          <Image
-            png="/assets/img/png/pokeball-release-64.png"
-            webp="/assets/img/webp/pokeball-release-64.webp"
-            alt="Release"
-            lazy
-            width={64}
-            height={64}
-          />
-          <p>Release</p>
-        </Button>
-      ) : null}
-    </CardWrapper>
+          <PokemonName>{nickname || name}</PokemonName>
+          {nickname ? <PokemonOriginalName>{name}</PokemonOriginalName> : null}
+        </ButtonLink>
+        {nickname ? (
+          <Button css={releaseButtonStyle} onClick={handleReleaseClick}>
+            <Image
+              png="/assets/img/png/pokeball-release-64.png"
+              webp="/assets/img/webp/pokeball-release-64.webp"
+              alt="Release"
+              lazy
+              width={64}
+              height={64}
+            />
+            <p>Release</p>
+          </Button>
+        ) : null}
+      </CardWrapper>
+      <ReleaseConfirmModal pokemon={pokemonToDelete} onClose={() => setPokemonToDelete(null)}/>
+    </>
   );
 }
 
