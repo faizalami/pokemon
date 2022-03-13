@@ -121,6 +121,14 @@ function NavButton ({ png, webp, title, to, bottom }) {
   );
 }
 
+function Content ({ children }) {
+  return children || (
+    <Suspense fallback={<Loading/>}>
+      <Outlet/>
+    </Suspense>
+  );
+}
+
 function Layout (props) {
   const location = useLocation();
   return (
@@ -173,17 +181,19 @@ function Layout (props) {
       </nav>
 
       <main css={mainContent}>
-        {props.title && location.key !== 'default' ? (
-          <PageHeader>{props.title}</PageHeader>
-        ) : null}
+        {!props.gameMode ? (
+          <>
+            {props.title && location.key !== 'default' ? (
+              <PageHeader>{props.title}</PageHeader>
+            ) : null}
 
-        <Flex as="article" container css={margin.b8}>
-          {props.children || (
-            <Suspense fallback={<Loading/>}>
-              <Outlet/>
-            </Suspense>
-          )}
-        </Flex>
+            <Flex as="article" container css={margin.b8}>
+              <Content>{props.children}</Content>
+            </Flex>
+          </>
+        ) : (
+          <Content>{props.children}</Content>
+        )}
       </main>
 
       <nav css={[navStyle, lgHide]}>

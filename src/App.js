@@ -23,7 +23,7 @@ function App () {
       <Route path="/my-pokemon" element={<Layout title="My Pokemon"/>}>
         <Route index element={<MyPokemon/>}/>
       </Route>
-      <Route path="/play" element={<Layout/>}>
+      <Route path="/play" element={<Layout gameMode/>}>
         <Route index element={<Game/>}/>
       </Route>
       <Route path="/about" element={<Layout title="About"/>}>
