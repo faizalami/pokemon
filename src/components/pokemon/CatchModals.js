@@ -1,9 +1,20 @@
 import CatchingModal from './CatchingModal';
 import CatchFailedModal from './CatchFailedModal';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import CatchSuccessModal from './CatchSuccessModal';
+import { useDispatch } from 'react-redux';
+import { resetPokemonCatch } from '../../redux/my-pokemons/my-pokemons.reducer';
 
 function CatchModals ({ loading, failed, pokemon }) {
+  const dispatch = useDispatch()
+  const dispatchResetPokemonCatch = useCallback(() => {
+    dispatch(resetPokemonCatch());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatchResetPokemonCatch();
+  }, [dispatchResetPokemonCatch]);
+
   const [catchFailed, setCatchFailed] = useState(false);
 
   useEffect(() => {
