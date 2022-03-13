@@ -123,7 +123,7 @@ function PokemonTotal ({ total }) {
 function PokemonCard ({ id, nickname_id, name, nickname, species, pokemonsTotal }) {
   const [pokemonToDelete, setPokemonToDelete] = useState(null);
 
-  const total = pokemonsTotal?.[id];
+  const total = !nickname ? pokemonsTotal?.[id] : null;
 
   const handleReleaseClick = () => {
     setPokemonToDelete({ nickname_id, nickname });
