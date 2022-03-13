@@ -18,6 +18,7 @@ import {
 } from '../../redux/my-pokemons/my-pokemons.selectors';
 import CatchModals from '../../components/pokemon/CatchModals';
 import { catchPokemon } from '../../redux/my-pokemons/my-pokemons.actions';
+import GameInstructionModal from './game-parts/GameInstructionModal';
 
 const gameArena = css`
   background-color: ${gray};
@@ -92,6 +93,7 @@ function GameIndex () {
       </Flex>
       <CatchButton css={catchButtonStyle} onClick={() => setCatchActive(true)}/>
       <CatchModals loading={catchLoading} failed={catchFailed} pokemon={caughtPokemon}/>
+      <GameInstructionModal/>
     </>
   );
 }
