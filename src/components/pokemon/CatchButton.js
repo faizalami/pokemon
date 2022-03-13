@@ -41,7 +41,8 @@ const shake = keyframes`
 `;
 
 const iconShake = css`
-  &:hover {
+  & img:hover,
+  &:focus img {
     animation: ${shake} 0.5s;
     animation-iteration-count: infinite;
   }
@@ -57,7 +58,7 @@ const buttonLabel = css`
 
 function CatchButton ({ className, onClick }) {
   return (
-    <Button column variant="link" onClick={onClick} className={className}>
+    <Button column variant="link" onClick={onClick} className={className} css={iconShake}>
       <Image
         png="/assets/img/png/pokeball-64.png"
         webp="/assets/img/webp/pokeball-64.webp"
@@ -65,7 +66,6 @@ function CatchButton ({ className, onClick }) {
         lazy
         width={64}
         height={64}
-        css={iconShake}
       />
       <p css={buttonLabel}>Catch!</p>
     </Button>
