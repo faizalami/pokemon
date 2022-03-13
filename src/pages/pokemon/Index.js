@@ -7,15 +7,16 @@ import { useSelector } from 'react-redux';
 import { selectMyPokemonTotalEachId } from '../../redux/my-pokemons/my-pokemons.selectors';
 
 function Index ({ data, loading }) {
-  const pokemonsTotal = useSelector(selectMyPokemonTotalEachId)
+  const pokemonsTotal = useSelector(selectMyPokemonTotalEachId);
 
   return (
     <>
       <Grid cols={2} gap={4} md={{ cols: 4 }} css={width.full}>
         {
-          data.map(item => <PokemonCard
+          data.map((item, index) => <PokemonCard
             key={`${item.id}${item.nickname_id || ''}`} {...item}
             pokemonsTotal={pokemonsTotal}
+            lazy={index >= 8}
           />)
         }
       </Grid>

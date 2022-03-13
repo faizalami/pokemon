@@ -120,7 +120,7 @@ function PokemonTotal ({ total }) {
   return null;
 }
 
-function PokemonCard ({ id, nickname_id, name, nickname, species, pokemonsTotal }) {
+function PokemonCard ({ id, nickname_id, name, nickname, species, pokemonsTotal, lazy }) {
   const [pokemonToDelete, setPokemonToDelete] = useState(null);
 
   const total = !nickname ? pokemonsTotal?.[id] : null;
@@ -139,7 +139,7 @@ function PokemonCard ({ id, nickname_id, name, nickname, species, pokemonsTotal 
               className="thumbnail-image"
               src={`${process.env.REACT_APP_DREAM_WORLD_URL}${id}.svg`}
               alt={name}
-              lazy
+              lazy={lazy}
               width={300}
               height={300}
             />
