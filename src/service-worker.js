@@ -23,10 +23,7 @@ staticResourceCache();
 imageCache();
 
 registerRoute(
-  ({ url }) => {
-    console.info(url.origin, process.env.REACT_APP_GQL_URI, process.env.REACT_APP_GQL_URI.startsWith(url.origin));
-    return process.env.REACT_APP_GQL_URI.startsWith(url.origin);
-  },
+  ({ url }) => process.env.REACT_APP_GQL_URI.startsWith(url.origin),
   ({ event }) => networkFirstPostReq(event),
   'POST',
 );
