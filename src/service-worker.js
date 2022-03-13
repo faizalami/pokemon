@@ -36,7 +36,7 @@ async function networkFirstPostReq (event) {
       setCache(event.request.clone(), response.clone());
       return response;
     })
-    .catch((err) => {
+    .catch(() => {
       return getCache(event.request.clone());
     });
 }
@@ -80,11 +80,9 @@ async function getCache (request) {
     let cacheControl = request.headers.get('Cache-Control');
     let maxAge = cacheControl ? parseInt(cacheControl.split('=')[1]) : 3600;
     if (Date.now() - data.timestamp > maxAge * 1000) {
-      console.log(`Cache expired. Load from API endpoint.`);
       return null;
     }
 
-    console.log(`Load response from cache.`);
     return new Response(JSON.stringify(data.response.body), data.response);
   } catch (err) {
     return null;
