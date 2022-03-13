@@ -4,11 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useCallback, useEffect, useState } from 'react';
 import debounce from 'lodash.debounce';
 import { getAllPokemons } from '../../redux/pokemons/pokemons.actions';
-import { selectPokemonData, selectLoading, selectCurrentOffset } from '../../redux/pokemons/pokemons.selectors';
+import {
+  selectPokemonData,
+  selectLoading,
+  selectCurrentOffset,
+  selectError,
+} from '../../redux/pokemons/pokemons.selectors';
 
 function PokemonIndex () {
   const dispatch = useDispatch();
   const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   const currentOffset = useSelector(selectCurrentOffset);
   const [pageOffset, setPageOffset] = useState(0);
   const [latestScrollHeight, setLatestScrollHeight] = useState(0);
@@ -36,7 +42,9 @@ function PokemonIndex () {
           clientHeight,
         } = event.target;
 
-        if (clientHeight + scrollTop >= scrollHeight - 10 && scrollHeight > latestScrollHeight && !loading) {
+        const onBottom = clientHeight + scrollTop >= scrollHeight - 10 && scrollHeight > latestScrollHeight;
+
+        if (error || (onBottom && !loading)) {
           setLatestScrollHeight(scrollHeight);
           setPageOffset(pageOffset + 20);
         }
