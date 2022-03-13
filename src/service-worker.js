@@ -57,10 +57,11 @@ async function serializeResponse (response) {
 
 async function setCache (request, response) {
   let body = await request.json();
-  let id = Md5(body.query).toString();
+  let id = Md5(`${body.query}${JSON.stringify(body.variables)}`).toString();
 
   let entry = {
     query: body.query,
+    variables: body.variables,
     response: await serializeResponse(response),
     timestamp: Date.now(),
   };
@@ -71,7 +72,7 @@ async function getCache (request) {
   let data;
   try {
     let body = await request.json();
-    let id = Md5(body.query).toString();
+    let id = Md5(`${body.query}${JSON.stringify(body.variables)}`).toString();
     data = await get(id, store);
     if (!data) {
       return null;
