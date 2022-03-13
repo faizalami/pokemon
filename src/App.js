@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import ErrorPage from './pages/errors/ErrorPage';
 import Layout from './components/Layout';
 
 const PokemonIndex = React.lazy(() => import('./pages/pokemon/PokemonIndex'));
@@ -8,6 +7,7 @@ const PokemonDetail = React.lazy(() => import('./pages/pokemon/Detail'));
 const MyPokemon = React.lazy(() => import('./pages/pokemon/MyPokemonIndex'));
 const About = React.lazy(() => import('./pages/about/Index'));
 const Game = React.lazy(() => import('./pages/game/Index'));
+const ErrorPage = React.lazy(() => import('./pages/errors/ErrorPage'));
 
 function App () {
   return (

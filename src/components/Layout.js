@@ -121,9 +121,9 @@ function NavButton ({ png, webp, title, to, bottom }) {
 }
 
 function Content ({ children }) {
-  return children || (
+  return (
     <Suspense fallback={<Loading/>}>
-      <Outlet/>
+      {children || <Outlet/>}
     </Suspense>
   );
 }
