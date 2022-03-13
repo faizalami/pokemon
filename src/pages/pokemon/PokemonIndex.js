@@ -54,7 +54,7 @@ function PokemonIndex () {
     return () => {
       allowRun = false;
     };
-  }, [pageOffset, latestScrollHeight, loading]);
+  }, [pageOffset, latestScrollHeight, loading, error]);
 
   useEffect(() => {
     if (currentOffset > 0 && pageOffset === 0) {
