@@ -111,7 +111,6 @@ function NavButton ({ png, webp, title, to, bottom }) {
           png={png}
           webp={webp}
           alt={title}
-          lazy
           width={64}
           height={64}
         />

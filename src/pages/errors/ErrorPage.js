@@ -10,7 +10,6 @@ function ErrorPage ({ code, message }) {
         <Image
           png="/assets/img/png/surprised-pikachu-128.png"
           webp="/assets/img/webp/surprised-pikachu-128.webp"
-          lazy
           width={128}
           height={128}
         />

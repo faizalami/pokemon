@@ -24,7 +24,6 @@ function Loading () {
         png="/assets/img/png/pokeball-64.png"
         webp="/assets/img/webp/pokeball-64.webp"
         alt="Loading"
-        lazy
         width={64}
         height={64}
         css={loadingIconStyle}
