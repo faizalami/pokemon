@@ -5,8 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { css, Global } from '@emotion/react';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import App from './App';
-import store from './redux/store';
+import store, { persistor } from './redux/store';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { pokeBallDark } from './components/variables';
@@ -20,12 +21,14 @@ const globalCss = css`
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <Global styles={globalCss}/>
-        <HelmetProvider>
-          <App/>
-        </HelmetProvider>
-      </BrowserRouter>
+      <PersistGate persistor={persistor}>
+        <BrowserRouter>
+          <Global styles={globalCss}/>
+          <HelmetProvider>
+            <App/>
+          </HelmetProvider>
+        </BrowserRouter>
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
