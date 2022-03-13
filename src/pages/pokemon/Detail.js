@@ -27,7 +27,7 @@ import Informations from './detail-parts/Informations';
 import Main from './detail-parts/Main';
 import MyPokemon from './detail-parts/MyPokemon';
 
-const catchButtonStyle = css`
+export const catchButtonStyle = css`
   position: fixed;
   bottom: 5rem;
   right: 1rem;
