@@ -15,6 +15,7 @@ function App () {
       <Route path="/" element={<Layout title="Pokedex"/>}>
         <Route index element={<PokemonIndex/>}/>
         <Route path="pokemon" element={<PokemonIndex/>}/>
+        <Route path="*" element={<ErrorPage code={404} message="Page not found."/>}/>
       </Route>
       <Route path="pokemon/:name" element={<Layout/>}>
         <Route index element={<PokemonDetail/>}/>
@@ -27,12 +28,6 @@ function App () {
       </Route>
       <Route path="/about" element={<Layout title="About"/>}>
         <Route index element={<About/>}/>
-      </Route>
-      <Route path="/404" element={<Layout/>}>
-        <Route index element={<ErrorPage code={404} message="Not Found."/>}/>
-      </Route>
-      <Route path="*" element={<Layout/>}>
-        <Route index element={<ErrorPage code={404} message="Not Found."/>}/>
       </Route>
     </Routes>
   );

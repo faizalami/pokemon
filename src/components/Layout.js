@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { Suspense } from 'react';
 import { css } from '@emotion/react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Flex, Grid } from './FlexGrid';
 import { ButtonLink, CircleButtonLink } from './Buttons';
 import { margin, padding, width } from './utilities';
@@ -122,6 +122,7 @@ function NavButton ({ png, webp, title, to, bottom }) {
 }
 
 function Layout (props) {
+  const location = useLocation();
   return (
     <Flex column wrap="nowrap" css={wrapper}>
       <nav css={navStyle}>
@@ -172,7 +173,9 @@ function Layout (props) {
       </nav>
 
       <main css={mainContent}>
-        {props.title ? <PageHeader>{props.title}</PageHeader> : null}
+        {props.title && location.key !== 'default' ? (
+          <PageHeader>{props.title}</PageHeader>
+        ) : null}
 
         <Flex as="article" container css={margin.b8}>
           {props.children || (
