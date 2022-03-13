@@ -30,12 +30,18 @@ const errorMessage = css`
 function CatchSuccessModal ({ pokemon }) {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
-  const error = useSelector(selectCatchError);
+  const [blankName, setBlankName] = useState(false);
+  const duplicateName = useSelector(selectCatchError);
 
   const handleFormSubmit = event => {
     event.preventDefault();
 
-    dispatch(storeCaughtPokemon(name));
+    if (name) {
+      setBlankName(false);
+      dispatch(storeCaughtPokemon(name));
+    } else {
+      setBlankName(true);
+    }
   };
 
   return (
@@ -58,8 +64,11 @@ function CatchSuccessModal ({ pokemon }) {
           value={name}
           onChange={event => setName(event.target.value)}
         />
-        {error ? (
+        {duplicateName ? (
           <p css={errorMessage}>Name already exist, try different name!</p>
+        ) : null}
+        {blankName ? (
+          <p css={errorMessage}>Please enter a name.</p>
         ) : null}
         <Button type="submit">Save</Button>
       </Flex>

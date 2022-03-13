@@ -20,7 +20,7 @@ const myPokemonsSlice = createSlice({
       if (nameExist) {
         state.error = true;
       }
-      if (state.caught && !nameExist) {
+      if (action.payload && state.caught && !nameExist) {
         const id = state.data.length + 1;
         const namedPokemon = {
           ...state.caught,
