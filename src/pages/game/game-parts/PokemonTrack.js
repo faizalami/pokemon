@@ -25,7 +25,7 @@ function PokemonTrack ({ pokemonList, fromRight, onClick }) {
       const pokeButton = rail.current.querySelector('button');
       pokeButton.style.marginLeft = '100%';
     }
-  }, [fromRight])
+  }, [fromRight]);
 
   useEffect(() => {
     let timeout = null;
@@ -55,10 +55,10 @@ function PokemonTrack ({ pokemonList, fromRight, onClick }) {
 
   return (
     <div ref={rail} css={gameRail}>
-      <Button variant="link" css={pokemonButton(duration)} onClick={() => onClick(pokemonList[index])}>
+      <Button variant="link" css={pokemonButton(duration)} onClick={() => onClick({ ...pokemonList[index] })}>
         <Image
           src={`${process.env.REACT_APP_DREAM_WORLD_URL}${pokemonList[index].id}.svg`}
-          alt="Poke"
+          alt={pokemonList[index].name}
           lazy
           width={80}
           height={80}
