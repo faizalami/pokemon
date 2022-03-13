@@ -4,7 +4,7 @@ import BaseModal from '../BaseModal';
 import { Flex } from '../FlexGrid';
 import Image from '../Image';
 import { Button } from '../Buttons';
-import { margin } from '../utilities';
+import { margin, textAlign } from '../utilities';
 import { useDispatch } from 'react-redux';
 import { deletePokemon } from '../../redux/my-pokemons/my-pokemons.reducer';
 
@@ -94,7 +94,7 @@ function ReleaseConfirmModal ({ pokemon, onClose }) {
             css={pikachu}
           />
         </Flex>
-        <h2>Are you sure to release {pokemon.nickname}?</h2>
+        <h2 css={textAlign.center}>Are you sure to release {pokemon.nickname}?</h2>
         <div>
           <Button onClick={onClose} variant="outline" css={margin.r2}>Noooo</Button>
           <Button onClick={handleDeleteClick}>Yes</Button>

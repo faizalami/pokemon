@@ -12,12 +12,11 @@ const Game = React.lazy(() => import('./pages/game/Index'));
 function App () {
   return (
     <Routes>
-      <Route path="/" element={<Layout title="Pokedex"/>}>
+      <Route element={<Layout title="Pokedex"/>}>
         <Route index element={<PokemonIndex/>}/>
-        <Route path="pokemon" element={<PokemonIndex/>}/>
-        <Route path="*" element={<ErrorPage code={404} message="Page not found."/>}/>
+        <Route path="/pokemon" element={<PokemonIndex/>}/>
       </Route>
-      <Route path="pokemon/:name" element={<Layout/>}>
+      <Route path="/pokemon/:name" element={<Layout/>}>
         <Route index element={<PokemonDetail/>}/>
       </Route>
       <Route path="/my-pokemon" element={<Layout title="My Pokemon"/>}>
@@ -29,6 +28,14 @@ function App () {
       <Route path="/about" element={<Layout title="About"/>}>
         <Route index element={<About/>}/>
       </Route>
+      <Route
+        path="*"
+        element={
+          <Layout>
+            <ErrorPage code={404} message="Page not found."/>
+          </Layout>
+        }
+      />
     </Routes>
   );
 }
