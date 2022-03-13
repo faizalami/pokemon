@@ -147,9 +147,9 @@ function PokemonCard ({ id, nickname_id, name, nickname, species, pokemonsTotal,
           </div>
 
           <PokemonName>{nickname || name}</PokemonName>
-          {nickname ? <PokemonOriginalName>{name}</PokemonOriginalName> : null}
+          {nickname_id ? <PokemonOriginalName>{name}</PokemonOriginalName> : null}
         </ButtonLink>
-        {nickname ? (
+        {nickname_id ? (
           <Button css={releaseButtonStyle} onClick={handleReleaseClick}>
             <Image
               png="/assets/img/png/pokeball-release-64.png"
