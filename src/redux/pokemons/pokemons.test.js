@@ -75,7 +75,6 @@ describe('Integration Test Pokemon Slice', () => {
 
   test('load pokemons list failed', async () => {
     server.use(graphql.query('getAllPokemons', (req, res, ctx) => {
-      console.info('masuk error');
       return res(ctx.errors([{ message: 'Error!' }]));
     }));
     const store = configureStore({
