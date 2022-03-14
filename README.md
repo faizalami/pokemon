@@ -6,7 +6,7 @@ in [this link](https://faizalami-pokemon.netlify.app/).
 > This web is using [PokéAPI - GraphQL v1beta](https://pokeapi.co/docs/graphql).
 > The PokéAPI GraphQL version is in development so maybe someday I should make some changes if the API changed
 
-## Sneak Peak
+## Sneak Peek
 
 <div style="display: inline;">
 	<img src="docs/pokedex.png" alt="Pokedex" width="100"/>
