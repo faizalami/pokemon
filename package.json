@@ -63,7 +63,8 @@
     ]
   },
   "devDependencies": {
-    "@emotion/jest": "^11.8.0"
+    "@emotion/jest": "^11.8.0",
+    "msw": "0.38.2"
   },
   "jest": {
     "snapshotSerializers": [
