@@ -54,8 +54,12 @@ function PokemonTrack ({ pokemonList, fromRight, onClick }) {
   }, [pokemonList, index, duration]);
 
   return (
-    <div ref={rail} css={gameRail}>
-      <Button variant="link" css={pokemonButton(duration)} onClick={() => onClick({ ...pokemonList[index] })}>
+    <div ref={rail} css={gameRail} data-testid="pokemon-track">
+      <Button
+        variant="link"
+        css={pokemonButton(duration)}
+        onClick={() => onClick({ ...pokemonList[index] })}
+      >
         <Image
           src={`${process.env.REACT_APP_DREAM_WORLD_URL}${pokemonList[index].id}.svg`}
           alt={pokemonList[index].name}
