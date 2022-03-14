@@ -449,7 +449,7 @@ Object {
                         class="emotion-8"
                         data-testid="image-regular"
                         height="64"
-                        loading="lazy"
+                        loading="eager"
                         src="/assets/img/png/pikachu-64.png"
                         width="64"
                       />
@@ -484,7 +484,7 @@ Object {
                         class="emotion-8"
                         data-testid="image-regular"
                         height="64"
-                        loading="lazy"
+                        loading="eager"
                         src="/assets/img/png/pokemon-trainer-64.png"
                         width="64"
                       />
@@ -519,7 +519,7 @@ Object {
                         class="emotion-8"
                         data-testid="image-regular"
                         height="64"
-                        loading="lazy"
+                        loading="eager"
                         src="/assets/img/png/pokeball-64.png"
                         width="64"
                       />
@@ -579,7 +579,7 @@ Object {
                     class="emotion-8"
                     data-testid="image-regular"
                     height="64"
-                    loading="lazy"
+                    loading="eager"
                     src="/assets/img/png/pikachu-64.png"
                     width="64"
                   />
@@ -612,7 +612,7 @@ Object {
                     class="emotion-8"
                     data-testid="image-regular"
                     height="64"
-                    loading="lazy"
+                    loading="eager"
                     src="/assets/img/png/pokeball-64.png"
                     width="64"
                   />
@@ -645,7 +645,7 @@ Object {
                     class="emotion-8"
                     data-testid="image-regular"
                     height="64"
-                    loading="lazy"
+                    loading="eager"
                     src="/assets/img/png/pokemon-trainer-64.png"
                     width="64"
                   />
@@ -1105,7 +1105,7 @@ Object {
                       class="emotion-8"
                       data-testid="image-regular"
                       height="64"
-                      loading="lazy"
+                      loading="eager"
                       src="/assets/img/png/pikachu-64.png"
                       width="64"
                     />
@@ -1140,7 +1140,7 @@ Object {
                       class="emotion-8"
                       data-testid="image-regular"
                       height="64"
-                      loading="lazy"
+                      loading="eager"
                       src="/assets/img/png/pokemon-trainer-64.png"
                       width="64"
                     />
@@ -1175,7 +1175,7 @@ Object {
                       class="emotion-8"
                       data-testid="image-regular"
                       height="64"
-                      loading="lazy"
+                      loading="eager"
                       src="/assets/img/png/pokeball-64.png"
                       width="64"
                     />
@@ -1235,7 +1235,7 @@ Object {
                   class="emotion-8"
                   data-testid="image-regular"
                   height="64"
-                  loading="lazy"
+                  loading="eager"
                   src="/assets/img/png/pikachu-64.png"
                   width="64"
                 />
@@ -1268,7 +1268,7 @@ Object {
                   class="emotion-8"
                   data-testid="image-regular"
                   height="64"
-                  loading="lazy"
+                  loading="eager"
                   src="/assets/img/png/pokeball-64.png"
                   width="64"
                 />
@@ -1301,7 +1301,7 @@ Object {
                   class="emotion-8"
                   data-testid="image-regular"
                   height="64"
-                  loading="lazy"
+                  loading="eager"
                   src="/assets/img/png/pokemon-trainer-64.png"
                   width="64"
                 />

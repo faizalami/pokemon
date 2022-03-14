@@ -32,6 +32,7 @@ describe('Test Pokemon Card', () => {
   test('using nickname', () => {
     const dummy = {
       id: 1,
+      nickname_id: 1,
       name: 'bulbasaur',
       nickname: 'test',
     };

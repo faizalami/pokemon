@@ -115,16 +115,17 @@ Object {
   align-items: center;
 }
 
-.emotion-1 {
-  object-fit: contain;
-  object-position: center;
-}
-
-.emotion-1:hover {
+.emotion-0 img:hover,
+.emotion-0:focus img {
   -webkit-animation: animation-0 0.5s;
   animation: animation-0 0.5s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+.emotion-1 {
+  object-fit: contain;
+  object-position: center;
 }
 
 .emotion-2 {
@@ -156,7 +157,7 @@ Object {
             class="emotion-1"
             data-testid="image-regular"
             height="64"
-            loading="lazy"
+            loading="eager"
             src="/assets/img/png/pokeball-64.png"
             width="64"
           />
@@ -281,16 +282,17 @@ Object {
   align-items: center;
 }
 
-.emotion-1 {
-  object-fit: contain;
-  object-position: center;
-}
-
-.emotion-1:hover {
+.emotion-0 img:hover,
+.emotion-0:focus img {
   -webkit-animation: animation-0 0.5s;
   animation: animation-0 0.5s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+.emotion-1 {
+  object-fit: contain;
+  object-position: center;
 }
 
 .emotion-2 {
@@ -321,7 +323,7 @@ Object {
           class="emotion-1"
           data-testid="image-regular"
           height="64"
-          loading="lazy"
+          loading="eager"
           src="/assets/img/png/pokeball-64.png"
           width="64"
         />

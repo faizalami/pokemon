@@ -56,7 +56,6 @@ function Main ({ detail }) {
         <Image
           src={`${process.env.REACT_APP_DREAM_WORLD_URL}${detail.id}.svg`}
           alt={detail.name}
-          lazy
           width={300}
           height={300}
         />

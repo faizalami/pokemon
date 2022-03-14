@@ -160,7 +160,7 @@ Object {
                 class="thumbnail-image emotion-4"
                 data-testid="image-regular"
                 height="300"
-                loading="lazy"
+                loading="eager"
                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
                 width="300"
               />
@@ -361,7 +361,7 @@ Object {
               class="thumbnail-image emotion-4"
               data-testid="image-regular"
               height="300"
-              loading="lazy"
+              loading="eager"
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
               width="300"
             />
