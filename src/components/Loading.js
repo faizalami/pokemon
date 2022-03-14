@@ -19,7 +19,7 @@ const loadingIconStyle = css`
 
 function Loading () {
   return (
-    <Flex justifyContent="center" css={[width.full, padding.a2]}>
+    <Flex justifyContent="center" css={[width.full, padding.a2]} data-testid="loading">
       <Image
         png="/assets/img/png/pokeball-64.png"
         webp="/assets/img/webp/pokeball-64.webp"

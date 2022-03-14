@@ -50,6 +50,7 @@ Object {
     <div>
       <div
         class="emotion-0"
+        data-testid="loading"
       >
         <picture>
           <source
@@ -121,6 +122,7 @@ Object {
 <div>
     <div
       class="emotion-0"
+      data-testid="loading"
     >
       <picture>
         <source
