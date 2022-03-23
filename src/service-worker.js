@@ -31,7 +31,8 @@ registerRoute(
 const store = createStore('GraphQL-Cache', 'PostResponses');
 
 async function cacheFirstPostReq (event) {
-  return getCache(event.request.clone()) || fetch(event.request.clone())
+  const cached = await getCache(event.request.clone());
+  return cached ? Promise.resolve(cached) : fetch(event.request.clone())
     .then((response) => {
       setCache(event.request.clone(), response.clone());
       return response;
