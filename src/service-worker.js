@@ -24,20 +24,17 @@ imageCache();
 
 registerRoute(
   ({ url }) => process.env.REACT_APP_GQL_URI.startsWith(url.origin),
-  ({ event }) => networkFirstPostReq(event),
+  ({ event }) => cacheFirstPostReq(event),
   'POST',
 );
 
 const store = createStore('GraphQL-Cache', 'PostResponses');
 
-async function networkFirstPostReq (event) {
-  return fetch(event.request.clone())
+async function cacheFirstPostReq (event) {
+  return getCache(event.request.clone()) || fetch(event.request.clone())
     .then((response) => {
       setCache(event.request.clone(), response.clone());
       return response;
-    })
-    .catch(() => {
-      return getCache(event.request.clone());
     });
 }
 
