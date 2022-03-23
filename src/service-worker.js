@@ -16,11 +16,15 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 pageCache();
 
-googleFontsCache();
+googleFontsCache({
+  maxAgeSeconds: 31536000,
+});
 
 staticResourceCache();
 
-imageCache();
+imageCache({
+  maxAgeSeconds: 31536000,
+});
 
 registerRoute(
   ({ url }) => process.env.REACT_APP_GQL_URI.startsWith(url.origin),
